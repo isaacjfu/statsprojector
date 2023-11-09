@@ -1,5 +1,5 @@
-player_stats_file = open("playerStatss.txt", "r")
-new_stats_file = open("playerStats.json" , "w")
+player_stats_file = open("rawPlayerStats.txt", "r")
+new_stats_file = open("rawPlayerStats.json" , "w")
 for line in player_stats_file:
     line = line.rstrip('\n')
     line = line + ',' + '\n'

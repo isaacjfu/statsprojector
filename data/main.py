@@ -8,7 +8,7 @@ start_time = time.time()
 all_players = players.get_players()
 all_stats = []
 
-player_stats_file = open("playerStats.txt", "a")
+player_stats_file = open("rawPlayerStats.txt", "a")
 for i in range(0, len(all_players)):
     player = all_players[i]
 

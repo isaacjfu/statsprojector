@@ -1,11 +1,12 @@
 import os
 import json
 import torch
+from '../data' import parseData 
 from torch import nn
-from torch.utils.data import DataLoader
+from torch.utils.data import DataLoader, Dataset
 from torchvision import datasets, transforms
 
-dataFile = '../data/playerStats.json'
+
 device = (
     "cuda"
     if torch.cuda.is_available()
@@ -35,12 +36,10 @@ class NeuralNetwork(nn.Module):
 class statsDataset(Dataset):
     def __init__(self,json_file, transform =None):
         self.transform = transform
-def parse_data():
-    print("hello")
+
 
 model = NeuralNetwork().to(device)
 print(model)
-
 X = torch.rand(1,28,28,device=device)
 logits = model(X)
 print(logits)

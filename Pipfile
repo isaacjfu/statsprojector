@@ -8,6 +8,9 @@ requests = "*"
 torchvision = "*"
 torch = "*"
 nba-api = "*"
+pandas = "*"
+matplotlib = "*"
+ipympl = "*"
 
 [dev-packages]
 

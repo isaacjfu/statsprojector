@@ -1,9 +1,10 @@
 import sys
 import json
-#add commas for conversion to json file
+
 if len(sys.argv) <= 1:
     print("Please put a number between 1 and 2")
 else:
+    #add commas for conversion to json file
     if sys.argv[1] == "1":
         player_stats_file = open("rawPlayerStats.txt", "r")
         new_stats_file = open("rawPlayerStats.json" , "a+")

@@ -1,33 +1,38 @@
-from nba_api.stats.endpoints import playercareerstats
+from nba_api.stats.endpoints import playercareerstats, commonplayerinfo
 from nba_api.stats.static import players
+
 import json
 import time
-
+import sys
 start_time = time.time()
 
 all_players = players.get_players()
-all_stats = []
+size = len(all_players)
+all_stats = {}
 
-player_stats_file = open("rawPlayerStats.txt", "a")
-for i in range(0, len(all_players)):
+for i in range(0, size):
+    print(i)
     player = all_players[i]
-
     career_stats = playercareerstats.PlayerCareerStats(per_mode36 = "PerGame",
         player_id = player['id']).get_json()
+    player_info = commonplayerinfo.CommonPlayerInfo(player_id = player['id']).get_json()
     career_obj = json.loads(career_stats)
+    player_obj = json.loads(player_info)
+    player_height = player_obj["resultSets"][0]['rowSet'][0][11]
+    player_weight = player_obj["resultSets"][0]['rowSet'][0][12]
+    if (player_obj["resultSets"][0]['rowSet'][0][30]) == None or (player_obj["resultSets"][0]['rowSet'][0][31]) == None or (player_obj["resultSets"][0]['rowSet'][0][30]) == 'Undrafted' or (player_obj["resultSets"][0]['rowSet'][0][31]) == 'Undrafted':
+        player_drafted = -1
+    else:
+        player_drafted = (int)(player_obj["resultSets"][0]['rowSet'][0][30]) * (int)(player_obj["resultSets"][0]['rowSet'][0][31])
     player_name = player['full_name']
     index = 0
-
-    print(player_name)
-    print(i)
-
+    reg_season_stats = []
     for i in range(len(career_obj["resultSets"])):
         if career_obj["resultSets"][i]["name"] == "SeasonTotalsRegularSeason":
             index = i
             break
     for season in career_obj["resultSets"][index]["rowSet"]:
         filtered_career_stats = {
-            "name": player_name,
             "team": season[4],
             "age": season[5],
             "season": season[1],
@@ -43,11 +48,20 @@ for i in range(0, len(all_players)):
             "blk": season[23],
             "tov": season[24],
         }
-        player_stats_file.write(json.dumps(filtered_career_stats))
-        player_stats_file.write("\n")
-        # all_stats.append(filtered_career_stats)
-player_stats_file.close()
-# with open("playerStats.json", "w") as outfile:
-#     json.dump(all_stats, outfile)
+        reg_season_stats.append(filtered_career_stats)
+    
+    player_information = {
+        "height" : player_height,
+        "weight" : player_weight,
+        "drafted" : player_drafted
+    }
+    player_dict = {
+        "info" : player_information,
+        "stats" : reg_season_stats
+    }
+    all_stats[player_name] = player_dict
+
+with open("testing.json", "w") as outfile:
+    json.dump(all_stats,outfile,indent = 2)
 
 print("--- %s seconds ---" % (time.time() - start_time))

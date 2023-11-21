@@ -6,11 +6,12 @@ name = "pypi"
 [packages]
 requests = "*"
 torchvision = "*"
-torch = "*"
 nba-api = "*"
 pandas = "*"
 matplotlib = "*"
 ipympl = "*"
+torchaudio = "*"
+torch = {file = "https://download.pytorch.org/whl/cu121/torch-2.1.1+cu121-cp310-cp310-win_amd64.whl"}
 
 [dev-packages]
 

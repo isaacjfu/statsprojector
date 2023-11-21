@@ -23,7 +23,7 @@ class parseData:
         # self.outputXFile = './inputFeatures.json'
         # self.outputyFile = './y_pred.json'
         self.CONST_SEASONS = 2
-        self.CONST_FEATURES = ["age","gp","mp","pts","reb","ast","3p","fg%","ft%","stl","blk","tov"]
+        self.CONST_FEATURES = ["age","heightPG","heightSF","heightC", "year","draftPos","gp","mp","pts","reb","ast","3p","fg%","ft%","stl","blk","tov"]
     
     def sample_data(self, name):
         f = open(self.dataFile)

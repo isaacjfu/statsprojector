@@ -61,7 +61,7 @@ for i in range(0, size):
     }
     all_stats[player_name] = player_dict
 
-with open("testing.json", "w") as outfile:
+with open("rawPlayerStats.json", "w") as outfile:
     json.dump(all_stats,outfile,indent = 2)
 
 print("--- %s seconds ---" % (time.time() - start_time))

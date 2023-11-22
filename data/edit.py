@@ -27,7 +27,6 @@ else:
 
     def combineTotSeasons(data):
         for player in data:
-            print(player)
             stats_list = data[player]['stats']
             size = len(stats_list)
             r_list = []

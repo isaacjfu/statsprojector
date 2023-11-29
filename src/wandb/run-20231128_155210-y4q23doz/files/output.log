@@ -1,0 +1,10 @@
+
+Epoch: 0 | MSE Train Loss: 1.0170611143112183 | MSE Test Loss: 2.303560495376587
+Traceback (most recent call last):
+  File "C:\Users\isaac\Documents\CodingProjects\statsprojector\src\main.py", line 272, in <module>
+    train()
+  File "C:\Users\isaac\Documents\CodingProjects\statsprojector\src\main.py", line 212, in train
+    train_helper(100, x_train, x_test, y_train, y_test, model, 0.01,"statsprojector.pth", x_mean, x_std )
+  File "C:\Users\isaac\Documents\CodingProjects\statsprojector\src\main.py", line 171, in train_helper
+    if (x_test[i][6]* x_std[6]) + x_mean[6] <= 22:
+IndexError: index 6 is out of bounds for dimension 0 with size 1

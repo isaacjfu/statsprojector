@@ -1,0 +1,738 @@
+2023-11-28 14:42:44,620 INFO    StreamThr :12772 [internal.py:wandb_internal():86] W&B internal server running at pid: 12772, started at: 2023-11-28 14:42:44.619272
+2023-11-28 14:42:44,622 DEBUG   HandlerThread:12772 [handler.py:handle_request():146] handle_request: status
+2023-11-28 14:42:44,626 INFO    WriterThread:12772 [datastore.py:open_for_write():85] open: C:\Users\isaac\Documents\CodingProjects\statsprojector\src\wandb\run-20231128_144244-w3zqno4g\run-w3zqno4g.wandb
+2023-11-28 14:42:44,627 DEBUG   SenderThread:12772 [sender.py:send():380] send: header
+2023-11-28 14:42:44,686 DEBUG   SenderThread:12772 [sender.py:send():380] send: run
+2023-11-28 14:42:44,972 INFO    SenderThread:12772 [dir_watcher.py:__init__():211] watching files in: C:\Users\isaac\Documents\CodingProjects\statsprojector\src\wandb\run-20231128_144244-w3zqno4g\files
+2023-11-28 14:42:44,972 INFO    SenderThread:12772 [sender.py:_start_run_threads():1124] run started: w3zqno4g with start time 1701211364.621272
+2023-11-28 14:42:44,989 DEBUG   HandlerThread:12772 [handler.py:handle_request():146] handle_request: check_version
+2023-11-28 14:42:44,990 DEBUG   SenderThread:12772 [sender.py:send_request():407] send_request: check_version
+2023-11-28 14:42:45,113 DEBUG   HandlerThread:12772 [handler.py:handle_request():146] handle_request: run_start
+2023-11-28 14:42:45,139 DEBUG   HandlerThread:12772 [system_info.py:__init__():32] System info init
+2023-11-28 14:42:45,139 DEBUG   HandlerThread:12772 [system_info.py:__init__():47] System info init done
+2023-11-28 14:42:45,139 INFO    HandlerThread:12772 [system_monitor.py:start():194] Starting system monitor
+2023-11-28 14:42:45,140 INFO    SystemMonitor:12772 [system_monitor.py:_start():158] Starting system asset monitoring threads
+2023-11-28 14:42:45,140 INFO    HandlerThread:12772 [system_monitor.py:probe():214] Collecting system info
+2023-11-28 14:42:45,145 INFO    SystemMonitor:12772 [interfaces.py:start():190] Started cpu monitoring
+2023-11-28 14:42:45,146 INFO    SystemMonitor:12772 [interfaces.py:start():190] Started disk monitoring
+2023-11-28 14:42:45,147 INFO    SystemMonitor:12772 [interfaces.py:start():190] Started gpu monitoring
+2023-11-28 14:42:45,157 INFO    SystemMonitor:12772 [interfaces.py:start():190] Started memory monitoring
+2023-11-28 14:42:45,168 INFO    SystemMonitor:12772 [interfaces.py:start():190] Started network monitoring
+2023-11-28 14:42:45,174 DEBUG   HandlerThread:12772 [system_info.py:probe():196] Probing system
+2023-11-28 14:42:45,176 DEBUG   HandlerThread:12772 [system_info.py:_probe_git():181] Probing git
+2023-11-28 14:42:45,292 DEBUG   HandlerThread:12772 [system_info.py:_probe_git():189] Probing git done
+2023-11-28 14:42:45,292 DEBUG   HandlerThread:12772 [system_info.py:probe():244] Probing system done
+2023-11-28 14:42:45,292 DEBUG   HandlerThread:12772 [system_monitor.py:probe():223] {'os': 'Windows-10-10.0.19045-SP0', 'python': '3.10.7', 'heartbeatAt': '2023-11-28T22:42:45.174663', 'startedAt': '2023-11-28T22:42:44.611269', 'docker': None, 'cuda': None, 'args': ('1',), 'state': 'running', 'program': 'C:\\Users\\isaac\\Documents\\CodingProjects\\statsprojector\\src\\main.py', 'codePathLocal': 'main.py', 'codePath': 'src\\main.py', 'git': {'remote': 'https://github.com/Rijikashi/statsprojector.git', 'commit': '7251957d090a4b95dd8e4aac1196a2a71dece618'}, 'email': 'isaacjfu@gmail.com', 'root': 'C:/Users/isaac/Documents/CodingProjects/statsprojector', 'host': 'DESKTOP-EQT75GH', 'username': 'isaac', 'executable': 'C:\\Users\\isaac\\.virtualenvs\\statsprojector-OUdrkD65\\Scripts\\python.exe', 'cpu_count': 6, 'cpu_count_logical': 12, 'cpu_freq': {'current': 3400.0, 'min': 0.0, 'max': 3400.0}, 'cpu_freq_per_core': [{'current': 3400.0, 'min': 0.0, 'max': 3400.0}], 'disk': {'/': {'total': 464.6778984069824, 'used': 454.9151191711426}}, 'gpu': 'NVIDIA GeForce GTX 1660 Ti', 'gpu_count': 1, 'gpu_devices': [{'name': 'NVIDIA GeForce GTX 1660 Ti', 'memory_total': 6442450944}], 'memory': {'total': 15.931747436523438}}
+2023-11-28 14:42:45,292 INFO    HandlerThread:12772 [system_monitor.py:probe():224] Finished collecting system info
+2023-11-28 14:42:45,292 INFO    HandlerThread:12772 [system_monitor.py:probe():227] Publishing system info
+2023-11-28 14:42:45,292 DEBUG   HandlerThread:12772 [system_info.py:_save_pip():52] Saving list of pip packages installed into the current environment
+2023-11-28 14:42:45,293 DEBUG   HandlerThread:12772 [system_info.py:_save_pip():68] Saving pip packages done
+2023-11-28 14:42:45,294 INFO    HandlerThread:12772 [system_monitor.py:probe():229] Finished publishing system info
+2023-11-28 14:42:45,299 DEBUG   SenderThread:12772 [sender.py:send():380] send: files
+2023-11-28 14:42:45,299 INFO    SenderThread:12772 [sender.py:_save_file():1380] saving file wandb-metadata.json with policy now
+2023-11-28 14:42:45,310 DEBUG   HandlerThread:12772 [handler.py:handle_request():146] handle_request: stop_status
+2023-11-28 14:42:45,311 DEBUG   SenderThread:12772 [sender.py:send_request():407] send_request: stop_status
+2023-11-28 14:42:45,313 DEBUG   HandlerThread:12772 [handler.py:handle_request():146] handle_request: internal_messages
+2023-11-28 14:42:45,449 DEBUG   SenderThread:12772 [sender.py:send():380] send: telemetry
+2023-11-28 14:42:45,812 INFO    wandb-upload_0:12772 [upload_job.py:push():131] Uploaded file C:\Users\isaac\AppData\Local\Temp\tmp_uqm27niwandb\xgtyzyxs-wandb-metadata.json
+2023-11-28 14:42:45,978 INFO    Thread-16 :12772 [dir_watcher.py:_on_file_created():271] file/dir created: C:\Users\isaac\Documents\CodingProjects\statsprojector\src\wandb\run-20231128_144244-w3zqno4g\files\wandb-metadata.json
+2023-11-28 14:42:45,979 INFO    Thread-16 :12772 [dir_watcher.py:_on_file_created():271] file/dir created: C:\Users\isaac\Documents\CodingProjects\statsprojector\src\wandb\run-20231128_144244-w3zqno4g\files\requirements.txt
+2023-11-28 14:42:46,978 INFO    Thread-16 :12772 [dir_watcher.py:_on_file_created():271] file/dir created: C:\Users\isaac\Documents\CodingProjects\statsprojector\src\wandb\run-20231128_144244-w3zqno4g\files\output.log
+2023-11-28 14:42:47,335 DEBUG   HandlerThread:12772 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-28 14:42:47,337 DEBUG   SenderThread:12772 [sender.py:send():380] send: history
+2023-11-28 14:42:47,339 DEBUG   SenderThread:12772 [sender.py:send_request():407] send_request: summary_record
+2023-11-28 14:42:47,345 INFO    SenderThread:12772 [sender.py:_save_file():1380] saving file wandb-summary.json with policy end
+2023-11-28 14:42:47,982 INFO    Thread-16 :12772 [dir_watcher.py:_on_file_created():271] file/dir created: C:\Users\isaac\Documents\CodingProjects\statsprojector\src\wandb\run-20231128_144244-w3zqno4g\files\wandb-summary.json
+2023-11-28 14:42:48,455 DEBUG   HandlerThread:12772 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-28 14:42:48,462 DEBUG   SenderThread:12772 [sender.py:send():380] send: history
+2023-11-28 14:42:48,464 DEBUG   SenderThread:12772 [sender.py:send_request():407] send_request: summary_record
+2023-11-28 14:42:48,466 INFO    SenderThread:12772 [sender.py:_save_file():1380] saving file wandb-summary.json with policy end
+2023-11-28 14:42:48,985 INFO    Thread-16 :12772 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\isaac\Documents\CodingProjects\statsprojector\src\wandb\run-20231128_144244-w3zqno4g\files\output.log
+2023-11-28 14:42:48,985 INFO    Thread-16 :12772 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\isaac\Documents\CodingProjects\statsprojector\src\wandb\run-20231128_144244-w3zqno4g\files\wandb-summary.json
+2023-11-28 14:42:49,727 DEBUG   HandlerThread:12772 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-28 14:42:49,733 DEBUG   SenderThread:12772 [sender.py:send():380] send: history
+2023-11-28 14:42:49,735 DEBUG   SenderThread:12772 [sender.py:send_request():407] send_request: summary_record
+2023-11-28 14:42:49,738 DEBUG   HandlerThread:12772 [handler.py:handle_request():146] handle_request: status_report
+2023-11-28 14:42:49,741 INFO    SenderThread:12772 [sender.py:_save_file():1380] saving file wandb-summary.json with policy end
+2023-11-28 14:42:49,997 INFO    Thread-16 :12772 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\isaac\Documents\CodingProjects\statsprojector\src\wandb\run-20231128_144244-w3zqno4g\files\wandb-summary.json
+2023-11-28 14:42:50,894 DEBUG   HandlerThread:12772 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-28 14:42:50,901 DEBUG   SenderThread:12772 [sender.py:send():380] send: history
+2023-11-28 14:42:50,903 DEBUG   SenderThread:12772 [sender.py:send_request():407] send_request: summary_record
+2023-11-28 14:42:50,906 INFO    SenderThread:12772 [sender.py:_save_file():1380] saving file wandb-summary.json with policy end
+2023-11-28 14:42:51,013 INFO    Thread-16 :12772 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\isaac\Documents\CodingProjects\statsprojector\src\wandb\run-20231128_144244-w3zqno4g\files\wandb-summary.json
+2023-11-28 14:42:52,059 DEBUG   HandlerThread:12772 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-28 14:42:52,066 DEBUG   SenderThread:12772 [sender.py:send():380] send: history
+2023-11-28 14:42:52,068 DEBUG   SenderThread:12772 [sender.py:send_request():407] send_request: summary_record
+2023-11-28 14:42:52,075 INFO    SenderThread:12772 [sender.py:_save_file():1380] saving file wandb-summary.json with policy end
+2023-11-28 14:42:53,040 INFO    Thread-16 :12772 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\isaac\Documents\CodingProjects\statsprojector\src\wandb\run-20231128_144244-w3zqno4g\files\wandb-summary.json
+2023-11-28 14:42:53,216 DEBUG   HandlerThread:12772 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-28 14:42:53,220 DEBUG   SenderThread:12772 [sender.py:send():380] send: history
+2023-11-28 14:42:53,221 DEBUG   SenderThread:12772 [sender.py:send_request():407] send_request: summary_record
+2023-11-28 14:42:53,225 INFO    SenderThread:12772 [sender.py:_save_file():1380] saving file wandb-summary.json with policy end
+2023-11-28 14:42:54,057 INFO    Thread-16 :12772 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\isaac\Documents\CodingProjects\statsprojector\src\wandb\run-20231128_144244-w3zqno4g\files\wandb-summary.json
+2023-11-28 14:42:54,429 DEBUG   HandlerThread:12772 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-28 14:42:54,436 DEBUG   SenderThread:12772 [sender.py:send():380] send: history
+2023-11-28 14:42:54,437 DEBUG   SenderThread:12772 [sender.py:send_request():407] send_request: summary_record
+2023-11-28 14:42:54,441 INFO    SenderThread:12772 [sender.py:_save_file():1380] saving file wandb-summary.json with policy end
+2023-11-28 14:42:55,062 INFO    Thread-16 :12772 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\isaac\Documents\CodingProjects\statsprojector\src\wandb\run-20231128_144244-w3zqno4g\files\wandb-summary.json
+2023-11-28 14:42:55,451 DEBUG   HandlerThread:12772 [handler.py:handle_request():146] handle_request: status_report
+2023-11-28 14:42:55,597 DEBUG   HandlerThread:12772 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-28 14:42:55,600 DEBUG   SenderThread:12772 [sender.py:send():380] send: history
+2023-11-28 14:42:55,603 DEBUG   SenderThread:12772 [sender.py:send_request():407] send_request: summary_record
+2023-11-28 14:42:55,608 INFO    SenderThread:12772 [sender.py:_save_file():1380] saving file wandb-summary.json with policy end
+2023-11-28 14:42:56,074 INFO    Thread-16 :12772 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\isaac\Documents\CodingProjects\statsprojector\src\wandb\run-20231128_144244-w3zqno4g\files\wandb-summary.json
+2023-11-28 14:42:56,736 DEBUG   HandlerThread:12772 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-28 14:42:56,742 DEBUG   SenderThread:12772 [sender.py:send():380] send: history
+2023-11-28 14:42:56,744 DEBUG   SenderThread:12772 [sender.py:send_request():407] send_request: summary_record
+2023-11-28 14:42:56,750 INFO    SenderThread:12772 [sender.py:_save_file():1380] saving file wandb-summary.json with policy end
+2023-11-28 14:42:57,087 INFO    Thread-16 :12772 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\isaac\Documents\CodingProjects\statsprojector\src\wandb\run-20231128_144244-w3zqno4g\files\wandb-summary.json
+2023-11-28 14:42:57,912 DEBUG   HandlerThread:12772 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-28 14:42:57,915 DEBUG   SenderThread:12772 [sender.py:send():380] send: history
+2023-11-28 14:42:57,916 DEBUG   SenderThread:12772 [sender.py:send_request():407] send_request: summary_record
+2023-11-28 14:42:57,918 INFO    SenderThread:12772 [sender.py:_save_file():1380] saving file wandb-summary.json with policy end
+2023-11-28 14:42:58,097 INFO    Thread-16 :12772 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\isaac\Documents\CodingProjects\statsprojector\src\wandb\run-20231128_144244-w3zqno4g\files\wandb-summary.json
+2023-11-28 14:42:59,075 DEBUG   HandlerThread:12772 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-28 14:42:59,082 DEBUG   SenderThread:12772 [sender.py:send():380] send: history
+2023-11-28 14:42:59,083 DEBUG   SenderThread:12772 [sender.py:send_request():407] send_request: summary_record
+2023-11-28 14:42:59,089 INFO    SenderThread:12772 [sender.py:_save_file():1380] saving file wandb-summary.json with policy end
+2023-11-28 14:42:59,105 INFO    Thread-16 :12772 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\isaac\Documents\CodingProjects\statsprojector\src\wandb\run-20231128_144244-w3zqno4g\files\wandb-summary.json
+2023-11-28 14:43:00,315 DEBUG   HandlerThread:12772 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-28 14:43:00,317 DEBUG   SenderThread:12772 [sender.py:send():380] send: history
+2023-11-28 14:43:00,318 DEBUG   SenderThread:12772 [sender.py:send_request():407] send_request: summary_record
+2023-11-28 14:43:00,320 INFO    SenderThread:12772 [sender.py:_save_file():1380] saving file wandb-summary.json with policy end
+2023-11-28 14:43:00,324 DEBUG   HandlerThread:12772 [handler.py:handle_request():146] handle_request: internal_messages
+2023-11-28 14:43:00,345 DEBUG   HandlerThread:12772 [handler.py:handle_request():146] handle_request: stop_status
+2023-11-28 14:43:00,346 DEBUG   SenderThread:12772 [sender.py:send_request():407] send_request: stop_status
+2023-11-28 14:43:00,489 DEBUG   HandlerThread:12772 [handler.py:handle_request():146] handle_request: status_report
+2023-11-28 14:43:01,133 INFO    Thread-16 :12772 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\isaac\Documents\CodingProjects\statsprojector\src\wandb\run-20231128_144244-w3zqno4g\files\output.log
+2023-11-28 14:43:01,133 INFO    Thread-16 :12772 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\isaac\Documents\CodingProjects\statsprojector\src\wandb\run-20231128_144244-w3zqno4g\files\wandb-summary.json
+2023-11-28 14:43:01,434 DEBUG   HandlerThread:12772 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-28 14:43:01,439 DEBUG   SenderThread:12772 [sender.py:send():380] send: history
+2023-11-28 14:43:01,440 DEBUG   SenderThread:12772 [sender.py:send_request():407] send_request: summary_record
+2023-11-28 14:43:01,446 INFO    SenderThread:12772 [sender.py:_save_file():1380] saving file wandb-summary.json with policy end
+2023-11-28 14:43:02,146 INFO    Thread-16 :12772 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\isaac\Documents\CodingProjects\statsprojector\src\wandb\run-20231128_144244-w3zqno4g\files\wandb-summary.json
+2023-11-28 14:43:02,640 DEBUG   HandlerThread:12772 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-28 14:43:02,646 DEBUG   SenderThread:12772 [sender.py:send():380] send: history
+2023-11-28 14:43:02,647 DEBUG   SenderThread:12772 [sender.py:send_request():407] send_request: summary_record
+2023-11-28 14:43:02,649 INFO    SenderThread:12772 [sender.py:_save_file():1380] saving file wandb-summary.json with policy end
+2023-11-28 14:43:03,156 INFO    Thread-16 :12772 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\isaac\Documents\CodingProjects\statsprojector\src\wandb\run-20231128_144244-w3zqno4g\files\wandb-summary.json
+2023-11-28 14:43:03,831 DEBUG   HandlerThread:12772 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-28 14:43:03,840 DEBUG   SenderThread:12772 [sender.py:send():380] send: history
+2023-11-28 14:43:03,841 DEBUG   SenderThread:12772 [sender.py:send_request():407] send_request: summary_record
+2023-11-28 14:43:03,846 INFO    SenderThread:12772 [sender.py:_save_file():1380] saving file wandb-summary.json with policy end
+2023-11-28 14:43:04,169 INFO    Thread-16 :12772 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\isaac\Documents\CodingProjects\statsprojector\src\wandb\run-20231128_144244-w3zqno4g\files\wandb-summary.json
+2023-11-28 14:43:05,070 DEBUG   HandlerThread:12772 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-28 14:43:05,078 DEBUG   SenderThread:12772 [sender.py:send():380] send: history
+2023-11-28 14:43:05,079 DEBUG   SenderThread:12772 [sender.py:send_request():407] send_request: summary_record
+2023-11-28 14:43:05,083 INFO    SenderThread:12772 [sender.py:_save_file():1380] saving file wandb-summary.json with policy end
+2023-11-28 14:43:05,172 INFO    Thread-16 :12772 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\isaac\Documents\CodingProjects\statsprojector\src\wandb\run-20231128_144244-w3zqno4g\files\wandb-summary.json
+2023-11-28 14:43:06,095 DEBUG   HandlerThread:12772 [handler.py:handle_request():146] handle_request: status_report
+2023-11-28 14:43:06,233 DEBUG   HandlerThread:12772 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-28 14:43:06,240 DEBUG   SenderThread:12772 [sender.py:send():380] send: history
+2023-11-28 14:43:06,241 DEBUG   SenderThread:12772 [sender.py:send_request():407] send_request: summary_record
+2023-11-28 14:43:06,247 INFO    SenderThread:12772 [sender.py:_save_file():1380] saving file wandb-summary.json with policy end
+2023-11-28 14:43:07,175 INFO    Thread-16 :12772 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\isaac\Documents\CodingProjects\statsprojector\src\wandb\run-20231128_144244-w3zqno4g\files\wandb-summary.json
+2023-11-28 14:43:07,404 DEBUG   HandlerThread:12772 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-28 14:43:07,408 DEBUG   SenderThread:12772 [sender.py:send():380] send: history
+2023-11-28 14:43:07,410 DEBUG   SenderThread:12772 [sender.py:send_request():407] send_request: summary_record
+2023-11-28 14:43:07,440 INFO    SenderThread:12772 [sender.py:_save_file():1380] saving file wandb-summary.json with policy end
+2023-11-28 14:43:08,183 INFO    Thread-16 :12772 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\isaac\Documents\CodingProjects\statsprojector\src\wandb\run-20231128_144244-w3zqno4g\files\wandb-summary.json
+2023-11-28 14:43:08,579 DEBUG   HandlerThread:12772 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-28 14:43:08,585 DEBUG   SenderThread:12772 [sender.py:send():380] send: history
+2023-11-28 14:43:08,587 DEBUG   SenderThread:12772 [sender.py:send_request():407] send_request: summary_record
+2023-11-28 14:43:08,594 INFO    SenderThread:12772 [sender.py:_save_file():1380] saving file wandb-summary.json with policy end
+2023-11-28 14:43:09,193 INFO    Thread-16 :12772 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\isaac\Documents\CodingProjects\statsprojector\src\wandb\run-20231128_144244-w3zqno4g\files\wandb-summary.json
+2023-11-28 14:43:09,737 DEBUG   HandlerThread:12772 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-28 14:43:09,744 DEBUG   SenderThread:12772 [sender.py:send():380] send: history
+2023-11-28 14:43:09,745 DEBUG   SenderThread:12772 [sender.py:send_request():407] send_request: summary_record
+2023-11-28 14:43:09,748 INFO    SenderThread:12772 [sender.py:_save_file():1380] saving file wandb-summary.json with policy end
+2023-11-28 14:43:10,203 INFO    Thread-16 :12772 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\isaac\Documents\CodingProjects\statsprojector\src\wandb\run-20231128_144244-w3zqno4g\files\wandb-summary.json
+2023-11-28 14:43:10,976 DEBUG   HandlerThread:12772 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-28 14:43:10,981 DEBUG   SenderThread:12772 [sender.py:send():380] send: history
+2023-11-28 14:43:10,983 DEBUG   SenderThread:12772 [sender.py:send_request():407] send_request: summary_record
+2023-11-28 14:43:10,987 INFO    SenderThread:12772 [sender.py:_save_file():1380] saving file wandb-summary.json with policy end
+2023-11-28 14:43:11,209 INFO    Thread-16 :12772 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\isaac\Documents\CodingProjects\statsprojector\src\wandb\run-20231128_144244-w3zqno4g\files\wandb-summary.json
+2023-11-28 14:43:11,992 DEBUG   HandlerThread:12772 [handler.py:handle_request():146] handle_request: status_report
+2023-11-28 14:43:12,176 DEBUG   HandlerThread:12772 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-28 14:43:12,182 DEBUG   SenderThread:12772 [sender.py:send():380] send: history
+2023-11-28 14:43:12,183 DEBUG   SenderThread:12772 [sender.py:send_request():407] send_request: summary_record
+2023-11-28 14:43:12,187 INFO    SenderThread:12772 [sender.py:_save_file():1380] saving file wandb-summary.json with policy end
+2023-11-28 14:43:12,216 INFO    Thread-16 :12772 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\isaac\Documents\CodingProjects\statsprojector\src\wandb\run-20231128_144244-w3zqno4g\files\wandb-summary.json
+2023-11-28 14:43:13,220 INFO    Thread-16 :12772 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\isaac\Documents\CodingProjects\statsprojector\src\wandb\run-20231128_144244-w3zqno4g\files\output.log
+2023-11-28 14:43:13,335 DEBUG   HandlerThread:12772 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-28 14:43:13,340 DEBUG   SenderThread:12772 [sender.py:send():380] send: history
+2023-11-28 14:43:13,342 DEBUG   SenderThread:12772 [sender.py:send_request():407] send_request: summary_record
+2023-11-28 14:43:13,349 INFO    SenderThread:12772 [sender.py:_save_file():1380] saving file wandb-summary.json with policy end
+2023-11-28 14:43:14,223 INFO    Thread-16 :12772 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\isaac\Documents\CodingProjects\statsprojector\src\wandb\run-20231128_144244-w3zqno4g\files\wandb-summary.json
+2023-11-28 14:43:14,487 DEBUG   HandlerThread:12772 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-28 14:43:14,494 DEBUG   SenderThread:12772 [sender.py:send():380] send: history
+2023-11-28 14:43:14,495 DEBUG   SenderThread:12772 [sender.py:send_request():407] send_request: summary_record
+2023-11-28 14:43:14,500 INFO    SenderThread:12772 [sender.py:_save_file():1380] saving file wandb-summary.json with policy end
+2023-11-28 14:43:15,227 INFO    Thread-16 :12772 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\isaac\Documents\CodingProjects\statsprojector\src\wandb\run-20231128_144244-w3zqno4g\files\wandb-summary.json
+2023-11-28 14:43:15,320 DEBUG   HandlerThread:12772 [handler.py:handle_request():146] handle_request: internal_messages
+2023-11-28 14:43:15,353 DEBUG   HandlerThread:12772 [handler.py:handle_request():146] handle_request: stop_status
+2023-11-28 14:43:15,353 DEBUG   SenderThread:12772 [sender.py:send_request():407] send_request: stop_status
+2023-11-28 14:43:15,764 DEBUG   HandlerThread:12772 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-28 14:43:15,770 DEBUG   SenderThread:12772 [sender.py:send():380] send: history
+2023-11-28 14:43:15,771 DEBUG   SenderThread:12772 [sender.py:send_request():407] send_request: summary_record
+2023-11-28 14:43:15,776 INFO    SenderThread:12772 [sender.py:_save_file():1380] saving file wandb-summary.json with policy end
+2023-11-28 14:43:16,230 INFO    Thread-16 :12772 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\isaac\Documents\CodingProjects\statsprojector\src\wandb\run-20231128_144244-w3zqno4g\files\wandb-summary.json
+2023-11-28 14:43:16,965 DEBUG   HandlerThread:12772 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-28 14:43:16,973 DEBUG   SenderThread:12772 [sender.py:send():380] send: history
+2023-11-28 14:43:16,976 DEBUG   SenderThread:12772 [sender.py:send_request():407] send_request: summary_record
+2023-11-28 14:43:16,979 INFO    SenderThread:12772 [sender.py:_save_file():1380] saving file wandb-summary.json with policy end
+2023-11-28 14:43:17,244 INFO    Thread-16 :12772 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\isaac\Documents\CodingProjects\statsprojector\src\wandb\run-20231128_144244-w3zqno4g\files\wandb-summary.json
+2023-11-28 14:43:17,985 DEBUG   HandlerThread:12772 [handler.py:handle_request():146] handle_request: status_report
+2023-11-28 14:43:18,148 DEBUG   HandlerThread:12772 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-28 14:43:18,152 DEBUG   SenderThread:12772 [sender.py:send():380] send: history
+2023-11-28 14:43:18,153 DEBUG   SenderThread:12772 [sender.py:send_request():407] send_request: summary_record
+2023-11-28 14:43:18,157 INFO    SenderThread:12772 [sender.py:_save_file():1380] saving file wandb-summary.json with policy end
+2023-11-28 14:43:18,249 INFO    Thread-16 :12772 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\isaac\Documents\CodingProjects\statsprojector\src\wandb\run-20231128_144244-w3zqno4g\files\config.yaml
+2023-11-28 14:43:18,249 INFO    Thread-16 :12772 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\isaac\Documents\CodingProjects\statsprojector\src\wandb\run-20231128_144244-w3zqno4g\files\wandb-summary.json
+2023-11-28 14:43:19,339 DEBUG   HandlerThread:12772 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-28 14:43:19,346 DEBUG   SenderThread:12772 [sender.py:send():380] send: history
+2023-11-28 14:43:19,347 DEBUG   SenderThread:12772 [sender.py:send_request():407] send_request: summary_record
+2023-11-28 14:43:19,351 INFO    SenderThread:12772 [sender.py:_save_file():1380] saving file wandb-summary.json with policy end
+2023-11-28 14:43:20,259 INFO    Thread-16 :12772 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\isaac\Documents\CodingProjects\statsprojector\src\wandb\run-20231128_144244-w3zqno4g\files\wandb-summary.json
+2023-11-28 14:43:20,577 DEBUG   HandlerThread:12772 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-28 14:43:20,581 DEBUG   SenderThread:12772 [sender.py:send():380] send: history
+2023-11-28 14:43:20,583 DEBUG   SenderThread:12772 [sender.py:send_request():407] send_request: summary_record
+2023-11-28 14:43:20,588 INFO    SenderThread:12772 [sender.py:_save_file():1380] saving file wandb-summary.json with policy end
+2023-11-28 14:43:21,263 INFO    Thread-16 :12772 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\isaac\Documents\CodingProjects\statsprojector\src\wandb\run-20231128_144244-w3zqno4g\files\wandb-summary.json
+2023-11-28 14:43:21,863 DEBUG   HandlerThread:12772 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-28 14:43:21,870 DEBUG   SenderThread:12772 [sender.py:send():380] send: history
+2023-11-28 14:43:21,871 DEBUG   SenderThread:12772 [sender.py:send_request():407] send_request: summary_record
+2023-11-28 14:43:21,875 INFO    SenderThread:12772 [sender.py:_save_file():1380] saving file wandb-summary.json with policy end
+2023-11-28 14:43:22,267 INFO    Thread-16 :12772 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\isaac\Documents\CodingProjects\statsprojector\src\wandb\run-20231128_144244-w3zqno4g\files\wandb-summary.json
+2023-11-28 14:43:23,006 DEBUG   HandlerThread:12772 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-28 14:43:23,015 DEBUG   SenderThread:12772 [sender.py:send():380] send: history
+2023-11-28 14:43:23,016 DEBUG   SenderThread:12772 [sender.py:send_request():407] send_request: summary_record
+2023-11-28 14:43:23,019 INFO    SenderThread:12772 [sender.py:_save_file():1380] saving file wandb-summary.json with policy end
+2023-11-28 14:43:23,283 INFO    Thread-16 :12772 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\isaac\Documents\CodingProjects\statsprojector\src\wandb\run-20231128_144244-w3zqno4g\files\output.log
+2023-11-28 14:43:23,284 INFO    Thread-16 :12772 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\isaac\Documents\CodingProjects\statsprojector\src\wandb\run-20231128_144244-w3zqno4g\files\wandb-summary.json
+2023-11-28 14:43:24,021 DEBUG   HandlerThread:12772 [handler.py:handle_request():146] handle_request: status_report
+2023-11-28 14:43:24,195 DEBUG   HandlerThread:12772 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-28 14:43:24,198 DEBUG   SenderThread:12772 [sender.py:send():380] send: history
+2023-11-28 14:43:24,199 DEBUG   SenderThread:12772 [sender.py:send_request():407] send_request: summary_record
+2023-11-28 14:43:24,201 INFO    SenderThread:12772 [sender.py:_save_file():1380] saving file wandb-summary.json with policy end
+2023-11-28 14:43:24,290 INFO    Thread-16 :12772 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\isaac\Documents\CodingProjects\statsprojector\src\wandb\run-20231128_144244-w3zqno4g\files\wandb-summary.json
+2023-11-28 14:43:25,382 DEBUG   HandlerThread:12772 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-28 14:43:25,388 DEBUG   SenderThread:12772 [sender.py:send():380] send: history
+2023-11-28 14:43:25,390 DEBUG   SenderThread:12772 [sender.py:send_request():407] send_request: summary_record
+2023-11-28 14:43:25,395 INFO    SenderThread:12772 [sender.py:_save_file():1380] saving file wandb-summary.json with policy end
+2023-11-28 14:43:26,317 INFO    Thread-16 :12772 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\isaac\Documents\CodingProjects\statsprojector\src\wandb\run-20231128_144244-w3zqno4g\files\wandb-summary.json
+2023-11-28 14:43:26,583 DEBUG   HandlerThread:12772 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-28 14:43:26,590 DEBUG   SenderThread:12772 [sender.py:send():380] send: history
+2023-11-28 14:43:26,593 DEBUG   SenderThread:12772 [sender.py:send_request():407] send_request: summary_record
+2023-11-28 14:43:26,597 INFO    SenderThread:12772 [sender.py:_save_file():1380] saving file wandb-summary.json with policy end
+2023-11-28 14:43:27,330 INFO    Thread-16 :12772 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\isaac\Documents\CodingProjects\statsprojector\src\wandb\run-20231128_144244-w3zqno4g\files\wandb-summary.json
+2023-11-28 14:43:27,744 DEBUG   HandlerThread:12772 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-28 14:43:27,748 DEBUG   SenderThread:12772 [sender.py:send():380] send: history
+2023-11-28 14:43:27,749 DEBUG   SenderThread:12772 [sender.py:send_request():407] send_request: summary_record
+2023-11-28 14:43:27,755 INFO    SenderThread:12772 [sender.py:_save_file():1380] saving file wandb-summary.json with policy end
+2023-11-28 14:43:28,344 INFO    Thread-16 :12772 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\isaac\Documents\CodingProjects\statsprojector\src\wandb\run-20231128_144244-w3zqno4g\files\wandb-summary.json
+2023-11-28 14:43:28,883 DEBUG   HandlerThread:12772 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-28 14:43:28,888 DEBUG   SenderThread:12772 [sender.py:send():380] send: history
+2023-11-28 14:43:28,889 DEBUG   SenderThread:12772 [sender.py:send_request():407] send_request: summary_record
+2023-11-28 14:43:28,891 INFO    SenderThread:12772 [sender.py:_save_file():1380] saving file wandb-summary.json with policy end
+2023-11-28 14:43:29,361 INFO    Thread-16 :12772 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\isaac\Documents\CodingProjects\statsprojector\src\wandb\run-20231128_144244-w3zqno4g\files\wandb-summary.json
+2023-11-28 14:43:29,894 DEBUG   HandlerThread:12772 [handler.py:handle_request():146] handle_request: status_report
+2023-11-28 14:43:30,068 DEBUG   HandlerThread:12772 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-28 14:43:30,074 DEBUG   SenderThread:12772 [sender.py:send():380] send: history
+2023-11-28 14:43:30,075 DEBUG   SenderThread:12772 [sender.py:send_request():407] send_request: summary_record
+2023-11-28 14:43:30,082 INFO    SenderThread:12772 [sender.py:_save_file():1380] saving file wandb-summary.json with policy end
+2023-11-28 14:43:30,333 DEBUG   HandlerThread:12772 [handler.py:handle_request():146] handle_request: internal_messages
+2023-11-28 14:43:30,350 DEBUG   HandlerThread:12772 [handler.py:handle_request():146] handle_request: stop_status
+2023-11-28 14:43:30,350 DEBUG   SenderThread:12772 [sender.py:send_request():407] send_request: stop_status
+2023-11-28 14:43:30,366 INFO    Thread-16 :12772 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\isaac\Documents\CodingProjects\statsprojector\src\wandb\run-20231128_144244-w3zqno4g\files\wandb-summary.json
+2023-11-28 14:43:31,260 DEBUG   HandlerThread:12772 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-28 14:43:31,263 DEBUG   SenderThread:12772 [sender.py:send():380] send: history
+2023-11-28 14:43:31,264 DEBUG   SenderThread:12772 [sender.py:send_request():407] send_request: summary_record
+2023-11-28 14:43:31,269 INFO    SenderThread:12772 [sender.py:_save_file():1380] saving file wandb-summary.json with policy end
+2023-11-28 14:43:31,379 INFO    Thread-16 :12772 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\isaac\Documents\CodingProjects\statsprojector\src\wandb\run-20231128_144244-w3zqno4g\files\wandb-summary.json
+2023-11-28 14:43:32,548 DEBUG   HandlerThread:12772 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-28 14:43:32,552 DEBUG   SenderThread:12772 [sender.py:send():380] send: history
+2023-11-28 14:43:32,553 DEBUG   SenderThread:12772 [sender.py:send_request():407] send_request: summary_record
+2023-11-28 14:43:32,557 INFO    SenderThread:12772 [sender.py:_save_file():1380] saving file wandb-summary.json with policy end
+2023-11-28 14:43:33,395 INFO    Thread-16 :12772 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\isaac\Documents\CodingProjects\statsprojector\src\wandb\run-20231128_144244-w3zqno4g\files\wandb-summary.json
+2023-11-28 14:43:33,679 DEBUG   HandlerThread:12772 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-28 14:43:33,686 DEBUG   SenderThread:12772 [sender.py:send():380] send: history
+2023-11-28 14:43:33,688 DEBUG   SenderThread:12772 [sender.py:send_request():407] send_request: summary_record
+2023-11-28 14:43:33,690 INFO    SenderThread:12772 [sender.py:_save_file():1380] saving file wandb-summary.json with policy end
+2023-11-28 14:43:34,403 INFO    Thread-16 :12772 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\isaac\Documents\CodingProjects\statsprojector\src\wandb\run-20231128_144244-w3zqno4g\files\wandb-summary.json
+2023-11-28 14:43:34,842 DEBUG   HandlerThread:12772 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-28 14:43:34,847 DEBUG   SenderThread:12772 [sender.py:send():380] send: history
+2023-11-28 14:43:34,850 DEBUG   SenderThread:12772 [sender.py:send_request():407] send_request: summary_record
+2023-11-28 14:43:34,854 INFO    SenderThread:12772 [sender.py:_save_file():1380] saving file wandb-summary.json with policy end
+2023-11-28 14:43:35,417 INFO    Thread-16 :12772 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\isaac\Documents\CodingProjects\statsprojector\src\wandb\run-20231128_144244-w3zqno4g\files\output.log
+2023-11-28 14:43:35,418 INFO    Thread-16 :12772 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\isaac\Documents\CodingProjects\statsprojector\src\wandb\run-20231128_144244-w3zqno4g\files\wandb-summary.json
+2023-11-28 14:43:35,859 DEBUG   HandlerThread:12772 [handler.py:handle_request():146] handle_request: status_report
+2023-11-28 14:43:35,990 DEBUG   HandlerThread:12772 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-28 14:43:35,994 DEBUG   SenderThread:12772 [sender.py:send():380] send: history
+2023-11-28 14:43:35,995 DEBUG   SenderThread:12772 [sender.py:send_request():407] send_request: summary_record
+2023-11-28 14:43:36,000 INFO    SenderThread:12772 [sender.py:_save_file():1380] saving file wandb-summary.json with policy end
+2023-11-28 14:43:36,424 INFO    Thread-16 :12772 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\isaac\Documents\CodingProjects\statsprojector\src\wandb\run-20231128_144244-w3zqno4g\files\wandb-summary.json
+2023-11-28 14:43:37,183 DEBUG   HandlerThread:12772 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-28 14:43:37,186 DEBUG   SenderThread:12772 [sender.py:send():380] send: history
+2023-11-28 14:43:37,187 DEBUG   SenderThread:12772 [sender.py:send_request():407] send_request: summary_record
+2023-11-28 14:43:37,192 INFO    SenderThread:12772 [sender.py:_save_file():1380] saving file wandb-summary.json with policy end
+2023-11-28 14:43:37,441 INFO    Thread-16 :12772 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\isaac\Documents\CodingProjects\statsprojector\src\wandb\run-20231128_144244-w3zqno4g\files\wandb-summary.json
+2023-11-28 14:43:38,331 DEBUG   HandlerThread:12772 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-28 14:43:38,336 DEBUG   SenderThread:12772 [sender.py:send():380] send: history
+2023-11-28 14:43:38,337 DEBUG   SenderThread:12772 [sender.py:send_request():407] send_request: summary_record
+2023-11-28 14:43:38,339 INFO    SenderThread:12772 [sender.py:_save_file():1380] saving file wandb-summary.json with policy end
+2023-11-28 14:43:38,444 INFO    Thread-16 :12772 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\isaac\Documents\CodingProjects\statsprojector\src\wandb\run-20231128_144244-w3zqno4g\files\wandb-summary.json
+2023-11-28 14:43:39,482 DEBUG   HandlerThread:12772 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-28 14:43:39,491 DEBUG   SenderThread:12772 [sender.py:send():380] send: history
+2023-11-28 14:43:39,492 DEBUG   SenderThread:12772 [sender.py:send_request():407] send_request: summary_record
+2023-11-28 14:43:39,497 INFO    SenderThread:12772 [sender.py:_save_file():1380] saving file wandb-summary.json with policy end
+2023-11-28 14:43:40,461 INFO    Thread-16 :12772 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\isaac\Documents\CodingProjects\statsprojector\src\wandb\run-20231128_144244-w3zqno4g\files\wandb-summary.json
+2023-11-28 14:43:40,833 DEBUG   HandlerThread:12772 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-28 14:43:40,839 DEBUG   SenderThread:12772 [sender.py:send():380] send: history
+2023-11-28 14:43:40,840 DEBUG   SenderThread:12772 [sender.py:send_request():407] send_request: summary_record
+2023-11-28 14:43:40,844 INFO    SenderThread:12772 [sender.py:_save_file():1380] saving file wandb-summary.json with policy end
+2023-11-28 14:43:41,466 INFO    Thread-16 :12772 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\isaac\Documents\CodingProjects\statsprojector\src\wandb\run-20231128_144244-w3zqno4g\files\wandb-summary.json
+2023-11-28 14:43:41,867 DEBUG   HandlerThread:12772 [handler.py:handle_request():146] handle_request: status_report
+2023-11-28 14:43:42,112 DEBUG   HandlerThread:12772 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-28 14:43:42,121 DEBUG   SenderThread:12772 [sender.py:send():380] send: history
+2023-11-28 14:43:42,122 DEBUG   SenderThread:12772 [sender.py:send_request():407] send_request: summary_record
+2023-11-28 14:43:42,128 INFO    SenderThread:12772 [sender.py:_save_file():1380] saving file wandb-summary.json with policy end
+2023-11-28 14:43:42,482 INFO    Thread-16 :12772 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\isaac\Documents\CodingProjects\statsprojector\src\wandb\run-20231128_144244-w3zqno4g\files\wandb-summary.json
+2023-11-28 14:43:43,286 DEBUG   HandlerThread:12772 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-28 14:43:43,292 DEBUG   SenderThread:12772 [sender.py:send():380] send: history
+2023-11-28 14:43:43,295 DEBUG   SenderThread:12772 [sender.py:send_request():407] send_request: summary_record
+2023-11-28 14:43:43,300 INFO    SenderThread:12772 [sender.py:_save_file():1380] saving file wandb-summary.json with policy end
+2023-11-28 14:43:43,494 INFO    Thread-16 :12772 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\isaac\Documents\CodingProjects\statsprojector\src\wandb\run-20231128_144244-w3zqno4g\files\wandb-summary.json
+2023-11-28 14:43:44,433 DEBUG   HandlerThread:12772 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-28 14:43:44,439 DEBUG   SenderThread:12772 [sender.py:send():380] send: history
+2023-11-28 14:43:44,440 DEBUG   SenderThread:12772 [sender.py:send_request():407] send_request: summary_record
+2023-11-28 14:43:44,446 INFO    SenderThread:12772 [sender.py:_save_file():1380] saving file wandb-summary.json with policy end
+2023-11-28 14:43:44,498 INFO    Thread-16 :12772 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\isaac\Documents\CodingProjects\statsprojector\src\wandb\run-20231128_144244-w3zqno4g\files\wandb-summary.json
+2023-11-28 14:43:45,175 DEBUG   SystemMonitor:12772 [system_monitor.py:_start():172] Starting system metrics aggregation loop
+2023-11-28 14:43:45,176 DEBUG   SenderThread:12772 [sender.py:send():380] send: stats
+2023-11-28 14:43:45,347 DEBUG   HandlerThread:12772 [handler.py:handle_request():146] handle_request: internal_messages
+2023-11-28 14:43:45,348 DEBUG   HandlerThread:12772 [handler.py:handle_request():146] handle_request: stop_status
+2023-11-28 14:43:45,348 DEBUG   SenderThread:12772 [sender.py:send_request():407] send_request: stop_status
+2023-11-28 14:43:45,584 DEBUG   HandlerThread:12772 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-28 14:43:45,593 DEBUG   SenderThread:12772 [sender.py:send():380] send: history
+2023-11-28 14:43:45,594 DEBUG   SenderThread:12772 [sender.py:send_request():407] send_request: summary_record
+2023-11-28 14:43:45,596 INFO    SenderThread:12772 [sender.py:_save_file():1380] saving file wandb-summary.json with policy end
+2023-11-28 14:43:46,506 INFO    Thread-16 :12772 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\isaac\Documents\CodingProjects\statsprojector\src\wandb\run-20231128_144244-w3zqno4g\files\wandb-summary.json
+2023-11-28 14:43:46,926 DEBUG   HandlerThread:12772 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-28 14:43:46,934 DEBUG   SenderThread:12772 [sender.py:send():380] send: history
+2023-11-28 14:43:46,936 DEBUG   SenderThread:12772 [sender.py:send_request():407] send_request: summary_record
+2023-11-28 14:43:46,937 DEBUG   HandlerThread:12772 [handler.py:handle_request():146] handle_request: status_report
+2023-11-28 14:43:46,939 INFO    SenderThread:12772 [sender.py:_save_file():1380] saving file wandb-summary.json with policy end
+2023-11-28 14:43:47,515 INFO    Thread-16 :12772 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\isaac\Documents\CodingProjects\statsprojector\src\wandb\run-20231128_144244-w3zqno4g\files\output.log
+2023-11-28 14:43:47,516 INFO    Thread-16 :12772 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\isaac\Documents\CodingProjects\statsprojector\src\wandb\run-20231128_144244-w3zqno4g\files\wandb-summary.json
+2023-11-28 14:43:48,226 DEBUG   HandlerThread:12772 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-28 14:43:48,229 DEBUG   SenderThread:12772 [sender.py:send():380] send: history
+2023-11-28 14:43:48,230 DEBUG   SenderThread:12772 [sender.py:send_request():407] send_request: summary_record
+2023-11-28 14:43:48,233 INFO    SenderThread:12772 [sender.py:_save_file():1380] saving file wandb-summary.json with policy end
+2023-11-28 14:43:48,517 INFO    Thread-16 :12772 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\isaac\Documents\CodingProjects\statsprojector\src\wandb\run-20231128_144244-w3zqno4g\files\wandb-summary.json
+2023-11-28 14:43:49,388 DEBUG   HandlerThread:12772 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-28 14:43:49,394 DEBUG   SenderThread:12772 [sender.py:send():380] send: history
+2023-11-28 14:43:49,395 DEBUG   SenderThread:12772 [sender.py:send_request():407] send_request: summary_record
+2023-11-28 14:43:49,397 INFO    SenderThread:12772 [sender.py:_save_file():1380] saving file wandb-summary.json with policy end
+2023-11-28 14:43:49,522 INFO    Thread-16 :12772 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\isaac\Documents\CodingProjects\statsprojector\src\wandb\run-20231128_144244-w3zqno4g\files\wandb-summary.json
+2023-11-28 14:43:50,562 DEBUG   HandlerThread:12772 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-28 14:43:50,568 DEBUG   SenderThread:12772 [sender.py:send():380] send: history
+2023-11-28 14:43:50,569 DEBUG   SenderThread:12772 [sender.py:send_request():407] send_request: summary_record
+2023-11-28 14:43:50,572 INFO    SenderThread:12772 [sender.py:_save_file():1380] saving file wandb-summary.json with policy end
+2023-11-28 14:43:51,524 INFO    Thread-16 :12772 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\isaac\Documents\CodingProjects\statsprojector\src\wandb\run-20231128_144244-w3zqno4g\files\wandb-summary.json
+2023-11-28 14:43:51,719 DEBUG   HandlerThread:12772 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-28 14:43:51,723 DEBUG   SenderThread:12772 [sender.py:send():380] send: history
+2023-11-28 14:43:51,725 DEBUG   SenderThread:12772 [sender.py:send_request():407] send_request: summary_record
+2023-11-28 14:43:51,730 INFO    SenderThread:12772 [sender.py:_save_file():1380] saving file wandb-summary.json with policy end
+2023-11-28 14:43:52,527 INFO    Thread-16 :12772 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\isaac\Documents\CodingProjects\statsprojector\src\wandb\run-20231128_144244-w3zqno4g\files\wandb-summary.json
+2023-11-28 14:43:52,746 DEBUG   HandlerThread:12772 [handler.py:handle_request():146] handle_request: status_report
+2023-11-28 14:43:52,928 DEBUG   HandlerThread:12772 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-28 14:43:52,935 DEBUG   SenderThread:12772 [sender.py:send():380] send: history
+2023-11-28 14:43:52,936 DEBUG   SenderThread:12772 [sender.py:send_request():407] send_request: summary_record
+2023-11-28 14:43:52,941 INFO    SenderThread:12772 [sender.py:_save_file():1380] saving file wandb-summary.json with policy end
+2023-11-28 14:43:53,542 INFO    Thread-16 :12772 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\isaac\Documents\CodingProjects\statsprojector\src\wandb\run-20231128_144244-w3zqno4g\files\wandb-summary.json
+2023-11-28 14:43:54,084 DEBUG   HandlerThread:12772 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-28 14:43:54,090 DEBUG   SenderThread:12772 [sender.py:send():380] send: history
+2023-11-28 14:43:54,092 DEBUG   SenderThread:12772 [sender.py:send_request():407] send_request: summary_record
+2023-11-28 14:43:54,097 INFO    SenderThread:12772 [sender.py:_save_file():1380] saving file wandb-summary.json with policy end
+2023-11-28 14:43:54,558 INFO    Thread-16 :12772 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\isaac\Documents\CodingProjects\statsprojector\src\wandb\run-20231128_144244-w3zqno4g\files\wandb-summary.json
+2023-11-28 14:43:55,267 DEBUG   HandlerThread:12772 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-28 14:43:55,271 DEBUG   SenderThread:12772 [sender.py:send():380] send: history
+2023-11-28 14:43:55,272 DEBUG   SenderThread:12772 [sender.py:send_request():407] send_request: summary_record
+2023-11-28 14:43:55,277 INFO    SenderThread:12772 [sender.py:_save_file():1380] saving file wandb-summary.json with policy end
+2023-11-28 14:43:55,561 INFO    Thread-16 :12772 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\isaac\Documents\CodingProjects\statsprojector\src\wandb\run-20231128_144244-w3zqno4g\files\wandb-summary.json
+2023-11-28 14:43:56,446 DEBUG   HandlerThread:12772 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-28 14:43:56,452 DEBUG   SenderThread:12772 [sender.py:send():380] send: history
+2023-11-28 14:43:56,454 DEBUG   SenderThread:12772 [sender.py:send_request():407] send_request: summary_record
+2023-11-28 14:43:56,457 INFO    SenderThread:12772 [sender.py:_save_file():1380] saving file wandb-summary.json with policy end
+2023-11-28 14:43:56,568 INFO    Thread-16 :12772 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\isaac\Documents\CodingProjects\statsprojector\src\wandb\run-20231128_144244-w3zqno4g\files\wandb-summary.json
+2023-11-28 14:43:57,655 DEBUG   HandlerThread:12772 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-28 14:43:57,659 DEBUG   SenderThread:12772 [sender.py:send():380] send: history
+2023-11-28 14:43:57,660 DEBUG   SenderThread:12772 [sender.py:send_request():407] send_request: summary_record
+2023-11-28 14:43:57,663 INFO    SenderThread:12772 [sender.py:_save_file():1380] saving file wandb-summary.json with policy end
+2023-11-28 14:43:58,582 INFO    Thread-16 :12772 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\isaac\Documents\CodingProjects\statsprojector\src\wandb\run-20231128_144244-w3zqno4g\files\wandb-summary.json
+2023-11-28 14:43:58,588 DEBUG   HandlerThread:12772 [handler.py:handle_request():146] handle_request: status_report
+2023-11-28 14:43:59,190 DEBUG   HandlerThread:12772 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-28 14:43:59,192 DEBUG   SenderThread:12772 [sender.py:send():380] send: history
+2023-11-28 14:43:59,193 DEBUG   SenderThread:12772 [sender.py:send_request():407] send_request: summary_record
+2023-11-28 14:43:59,195 INFO    SenderThread:12772 [sender.py:_save_file():1380] saving file wandb-summary.json with policy end
+2023-11-28 14:43:59,589 INFO    Thread-16 :12772 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\isaac\Documents\CodingProjects\statsprojector\src\wandb\run-20231128_144244-w3zqno4g\files\wandb-summary.json
+2023-11-28 14:44:00,351 DEBUG   HandlerThread:12772 [handler.py:handle_request():146] handle_request: stop_status
+2023-11-28 14:44:00,351 DEBUG   HandlerThread:12772 [handler.py:handle_request():146] handle_request: internal_messages
+2023-11-28 14:44:00,352 DEBUG   SenderThread:12772 [sender.py:send_request():407] send_request: stop_status
+2023-11-28 14:44:00,553 DEBUG   HandlerThread:12772 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-28 14:44:00,559 DEBUG   SenderThread:12772 [sender.py:send():380] send: history
+2023-11-28 14:44:00,560 DEBUG   SenderThread:12772 [sender.py:send_request():407] send_request: summary_record
+2023-11-28 14:44:00,563 INFO    SenderThread:12772 [sender.py:_save_file():1380] saving file wandb-summary.json with policy end
+2023-11-28 14:44:00,601 INFO    Thread-16 :12772 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\isaac\Documents\CodingProjects\statsprojector\src\wandb\run-20231128_144244-w3zqno4g\files\wandb-summary.json
+2023-11-28 14:44:01,607 INFO    Thread-16 :12772 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\isaac\Documents\CodingProjects\statsprojector\src\wandb\run-20231128_144244-w3zqno4g\files\output.log
+2023-11-28 14:44:01,851 DEBUG   HandlerThread:12772 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-28 14:44:01,854 DEBUG   SenderThread:12772 [sender.py:send():380] send: history
+2023-11-28 14:44:01,855 DEBUG   SenderThread:12772 [sender.py:send_request():407] send_request: summary_record
+2023-11-28 14:44:01,859 INFO    SenderThread:12772 [sender.py:_save_file():1380] saving file wandb-summary.json with policy end
+2023-11-28 14:44:02,620 INFO    Thread-16 :12772 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\isaac\Documents\CodingProjects\statsprojector\src\wandb\run-20231128_144244-w3zqno4g\files\wandb-summary.json
+2023-11-28 14:44:03,104 DEBUG   HandlerThread:12772 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-28 14:44:03,110 DEBUG   SenderThread:12772 [sender.py:send():380] send: history
+2023-11-28 14:44:03,112 DEBUG   SenderThread:12772 [sender.py:send_request():407] send_request: summary_record
+2023-11-28 14:44:03,116 INFO    SenderThread:12772 [sender.py:_save_file():1380] saving file wandb-summary.json with policy end
+2023-11-28 14:44:03,634 INFO    Thread-16 :12772 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\isaac\Documents\CodingProjects\statsprojector\src\wandb\run-20231128_144244-w3zqno4g\files\wandb-summary.json
+2023-11-28 14:44:04,119 DEBUG   HandlerThread:12772 [handler.py:handle_request():146] handle_request: status_report
+2023-11-28 14:44:04,532 DEBUG   HandlerThread:12772 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-28 14:44:04,538 DEBUG   SenderThread:12772 [sender.py:send():380] send: history
+2023-11-28 14:44:04,539 DEBUG   SenderThread:12772 [sender.py:send_request():407] send_request: summary_record
+2023-11-28 14:44:04,542 INFO    SenderThread:12772 [sender.py:_save_file():1380] saving file wandb-summary.json with policy end
+2023-11-28 14:44:04,648 INFO    Thread-16 :12772 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\isaac\Documents\CodingProjects\statsprojector\src\wandb\run-20231128_144244-w3zqno4g\files\wandb-summary.json
+2023-11-28 14:44:05,822 DEBUG   HandlerThread:12772 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-28 14:44:05,826 DEBUG   SenderThread:12772 [sender.py:send():380] send: history
+2023-11-28 14:44:05,827 DEBUG   SenderThread:12772 [sender.py:send_request():407] send_request: summary_record
+2023-11-28 14:44:05,835 INFO    SenderThread:12772 [sender.py:_save_file():1380] saving file wandb-summary.json with policy end
+2023-11-28 14:44:06,674 INFO    Thread-16 :12772 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\isaac\Documents\CodingProjects\statsprojector\src\wandb\run-20231128_144244-w3zqno4g\files\wandb-summary.json
+2023-11-28 14:44:07,050 DEBUG   HandlerThread:12772 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-28 14:44:07,053 DEBUG   SenderThread:12772 [sender.py:send():380] send: history
+2023-11-28 14:44:07,054 DEBUG   SenderThread:12772 [sender.py:send_request():407] send_request: summary_record
+2023-11-28 14:44:07,056 INFO    SenderThread:12772 [sender.py:_save_file():1380] saving file wandb-summary.json with policy end
+2023-11-28 14:44:07,682 INFO    Thread-16 :12772 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\isaac\Documents\CodingProjects\statsprojector\src\wandb\run-20231128_144244-w3zqno4g\files\wandb-summary.json
+2023-11-28 14:44:08,235 DEBUG   HandlerThread:12772 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-28 14:44:08,241 DEBUG   SenderThread:12772 [sender.py:send():380] send: history
+2023-11-28 14:44:08,243 DEBUG   SenderThread:12772 [sender.py:send_request():407] send_request: summary_record
+2023-11-28 14:44:08,293 INFO    SenderThread:12772 [sender.py:_save_file():1380] saving file wandb-summary.json with policy end
+2023-11-28 14:44:08,695 INFO    Thread-16 :12772 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\isaac\Documents\CodingProjects\statsprojector\src\wandb\run-20231128_144244-w3zqno4g\files\wandb-summary.json
+2023-11-28 14:44:09,303 DEBUG   HandlerThread:12772 [handler.py:handle_request():146] handle_request: status_report
+2023-11-28 14:44:09,504 DEBUG   HandlerThread:12772 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-28 14:44:09,510 DEBUG   SenderThread:12772 [sender.py:send():380] send: history
+2023-11-28 14:44:09,512 DEBUG   SenderThread:12772 [sender.py:send_request():407] send_request: summary_record
+2023-11-28 14:44:09,515 INFO    SenderThread:12772 [sender.py:_save_file():1380] saving file wandb-summary.json with policy end
+2023-11-28 14:44:09,711 INFO    Thread-16 :12772 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\isaac\Documents\CodingProjects\statsprojector\src\wandb\run-20231128_144244-w3zqno4g\files\wandb-summary.json
+2023-11-28 14:44:10,650 DEBUG   HandlerThread:12772 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-28 14:44:10,656 DEBUG   SenderThread:12772 [sender.py:send():380] send: history
+2023-11-28 14:44:10,658 DEBUG   SenderThread:12772 [sender.py:send_request():407] send_request: summary_record
+2023-11-28 14:44:10,663 INFO    SenderThread:12772 [sender.py:_save_file():1380] saving file wandb-summary.json with policy end
+2023-11-28 14:44:10,726 INFO    Thread-16 :12772 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\isaac\Documents\CodingProjects\statsprojector\src\wandb\run-20231128_144244-w3zqno4g\files\wandb-summary.json
+2023-11-28 14:44:11,815 DEBUG   HandlerThread:12772 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-28 14:44:11,822 DEBUG   SenderThread:12772 [sender.py:send():380] send: history
+2023-11-28 14:44:11,823 DEBUG   SenderThread:12772 [sender.py:send_request():407] send_request: summary_record
+2023-11-28 14:44:11,826 INFO    SenderThread:12772 [sender.py:_save_file():1380] saving file wandb-summary.json with policy end
+2023-11-28 14:44:12,752 INFO    Thread-16 :12772 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\isaac\Documents\CodingProjects\statsprojector\src\wandb\run-20231128_144244-w3zqno4g\files\wandb-summary.json
+2023-11-28 14:44:13,090 DEBUG   HandlerThread:12772 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-28 14:44:13,097 DEBUG   SenderThread:12772 [sender.py:send():380] send: history
+2023-11-28 14:44:13,099 DEBUG   SenderThread:12772 [sender.py:send_request():407] send_request: summary_record
+2023-11-28 14:44:13,101 INFO    SenderThread:12772 [sender.py:_save_file():1380] saving file wandb-summary.json with policy end
+2023-11-28 14:44:13,753 INFO    Thread-16 :12772 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\isaac\Documents\CodingProjects\statsprojector\src\wandb\run-20231128_144244-w3zqno4g\files\output.log
+2023-11-28 14:44:13,754 INFO    Thread-16 :12772 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\isaac\Documents\CodingProjects\statsprojector\src\wandb\run-20231128_144244-w3zqno4g\files\wandb-summary.json
+2023-11-28 14:44:14,532 DEBUG   HandlerThread:12772 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-28 14:44:14,537 DEBUG   SenderThread:12772 [sender.py:send():380] send: history
+2023-11-28 14:44:14,539 DEBUG   SenderThread:12772 [sender.py:send_request():407] send_request: summary_record
+2023-11-28 14:44:14,540 DEBUG   HandlerThread:12772 [handler.py:handle_request():146] handle_request: status_report
+2023-11-28 14:44:14,544 INFO    SenderThread:12772 [sender.py:_save_file():1380] saving file wandb-summary.json with policy end
+2023-11-28 14:44:14,763 INFO    Thread-16 :12772 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\isaac\Documents\CodingProjects\statsprojector\src\wandb\run-20231128_144244-w3zqno4g\files\wandb-summary.json
+2023-11-28 14:44:15,179 DEBUG   SenderThread:12772 [sender.py:send():380] send: stats
+2023-11-28 14:44:15,352 DEBUG   HandlerThread:12772 [handler.py:handle_request():146] handle_request: stop_status
+2023-11-28 14:44:15,353 DEBUG   SenderThread:12772 [sender.py:send_request():407] send_request: stop_status
+2023-11-28 14:44:15,368 DEBUG   HandlerThread:12772 [handler.py:handle_request():146] handle_request: internal_messages
+2023-11-28 14:44:15,759 DEBUG   HandlerThread:12772 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-28 14:44:15,761 DEBUG   SenderThread:12772 [sender.py:send():380] send: history
+2023-11-28 14:44:15,762 DEBUG   SenderThread:12772 [sender.py:send_request():407] send_request: summary_record
+2023-11-28 14:44:15,766 INFO    SenderThread:12772 [sender.py:_save_file():1380] saving file wandb-summary.json with policy end
+2023-11-28 14:44:15,773 INFO    Thread-16 :12772 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\isaac\Documents\CodingProjects\statsprojector\src\wandb\run-20231128_144244-w3zqno4g\files\wandb-summary.json
+2023-11-28 14:44:17,524 DEBUG   HandlerThread:12772 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-28 14:44:17,532 DEBUG   SenderThread:12772 [sender.py:send():380] send: history
+2023-11-28 14:44:17,533 DEBUG   SenderThread:12772 [sender.py:send_request():407] send_request: summary_record
+2023-11-28 14:44:17,539 INFO    SenderThread:12772 [sender.py:_save_file():1380] saving file wandb-summary.json with policy end
+2023-11-28 14:44:17,795 INFO    Thread-16 :12772 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\isaac\Documents\CodingProjects\statsprojector\src\wandb\run-20231128_144244-w3zqno4g\files\wandb-summary.json
+2023-11-28 14:44:18,836 DEBUG   HandlerThread:12772 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-28 14:44:18,841 DEBUG   SenderThread:12772 [sender.py:send():380] send: history
+2023-11-28 14:44:18,842 DEBUG   SenderThread:12772 [sender.py:send_request():407] send_request: summary_record
+2023-11-28 14:44:18,847 INFO    SenderThread:12772 [sender.py:_save_file():1380] saving file wandb-summary.json with policy end
+2023-11-28 14:44:19,808 INFO    Thread-16 :12772 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\isaac\Documents\CodingProjects\statsprojector\src\wandb\run-20231128_144244-w3zqno4g\files\wandb-summary.json
+2023-11-28 14:44:19,854 DEBUG   HandlerThread:12772 [handler.py:handle_request():146] handle_request: status_report
+2023-11-28 14:44:20,290 DEBUG   HandlerThread:12772 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-28 14:44:20,291 DEBUG   SenderThread:12772 [sender.py:send():380] send: history
+2023-11-28 14:44:20,294 DEBUG   SenderThread:12772 [sender.py:send_request():407] send_request: summary_record
+2023-11-28 14:44:20,297 INFO    SenderThread:12772 [sender.py:_save_file():1380] saving file wandb-summary.json with policy end
+2023-11-28 14:44:20,812 INFO    Thread-16 :12772 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\isaac\Documents\CodingProjects\statsprojector\src\wandb\run-20231128_144244-w3zqno4g\files\wandb-summary.json
+2023-11-28 14:44:21,649 DEBUG   HandlerThread:12772 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-28 14:44:21,657 DEBUG   SenderThread:12772 [sender.py:send():380] send: history
+2023-11-28 14:44:21,659 DEBUG   SenderThread:12772 [sender.py:send_request():407] send_request: summary_record
+2023-11-28 14:44:21,662 INFO    SenderThread:12772 [sender.py:_save_file():1380] saving file wandb-summary.json with policy end
+2023-11-28 14:44:21,826 INFO    Thread-16 :12772 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\isaac\Documents\CodingProjects\statsprojector\src\wandb\run-20231128_144244-w3zqno4g\files\wandb-summary.json
+2023-11-28 14:44:23,201 DEBUG   HandlerThread:12772 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-28 14:44:23,205 DEBUG   SenderThread:12772 [sender.py:send():380] send: history
+2023-11-28 14:44:23,206 DEBUG   SenderThread:12772 [sender.py:send_request():407] send_request: summary_record
+2023-11-28 14:44:23,210 INFO    SenderThread:12772 [sender.py:_save_file():1380] saving file wandb-summary.json with policy end
+2023-11-28 14:44:23,847 INFO    Thread-16 :12772 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\isaac\Documents\CodingProjects\statsprojector\src\wandb\run-20231128_144244-w3zqno4g\files\wandb-summary.json
+2023-11-28 14:44:24,373 DEBUG   HandlerThread:12772 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-28 14:44:24,377 DEBUG   SenderThread:12772 [sender.py:send():380] send: history
+2023-11-28 14:44:24,378 DEBUG   SenderThread:12772 [sender.py:send_request():407] send_request: summary_record
+2023-11-28 14:44:24,382 INFO    SenderThread:12772 [sender.py:_save_file():1380] saving file wandb-summary.json with policy end
+2023-11-28 14:44:24,861 INFO    Thread-16 :12772 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\isaac\Documents\CodingProjects\statsprojector\src\wandb\run-20231128_144244-w3zqno4g\files\wandb-summary.json
+2023-11-28 14:44:24,967 DEBUG   HandlerThread:12772 [handler.py:handle_request():146] handle_request: status_report
+2023-11-28 14:44:25,544 DEBUG   HandlerThread:12772 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-28 14:44:25,547 DEBUG   SenderThread:12772 [sender.py:send():380] send: history
+2023-11-28 14:44:25,548 DEBUG   SenderThread:12772 [sender.py:send_request():407] send_request: summary_record
+2023-11-28 14:44:25,550 INFO    SenderThread:12772 [sender.py:_save_file():1380] saving file wandb-summary.json with policy end
+2023-11-28 14:44:25,867 INFO    Thread-16 :12772 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\isaac\Documents\CodingProjects\statsprojector\src\wandb\run-20231128_144244-w3zqno4g\files\wandb-summary.json
+2023-11-28 14:44:26,726 DEBUG   HandlerThread:12772 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-28 14:44:26,733 DEBUG   SenderThread:12772 [sender.py:send():380] send: history
+2023-11-28 14:44:26,735 DEBUG   SenderThread:12772 [sender.py:send_request():407] send_request: summary_record
+2023-11-28 14:44:26,738 INFO    SenderThread:12772 [sender.py:_save_file():1380] saving file wandb-summary.json with policy end
+2023-11-28 14:44:26,882 INFO    Thread-16 :12772 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\isaac\Documents\CodingProjects\statsprojector\src\wandb\run-20231128_144244-w3zqno4g\files\output.log
+2023-11-28 14:44:26,883 INFO    Thread-16 :12772 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\isaac\Documents\CodingProjects\statsprojector\src\wandb\run-20231128_144244-w3zqno4g\files\wandb-summary.json
+2023-11-28 14:44:27,959 DEBUG   HandlerThread:12772 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-28 14:44:27,968 DEBUG   SenderThread:12772 [sender.py:send():380] send: history
+2023-11-28 14:44:27,969 DEBUG   SenderThread:12772 [sender.py:send_request():407] send_request: summary_record
+2023-11-28 14:44:27,973 INFO    SenderThread:12772 [sender.py:_save_file():1380] saving file wandb-summary.json with policy end
+2023-11-28 14:44:28,891 INFO    Thread-16 :12772 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\isaac\Documents\CodingProjects\statsprojector\src\wandb\run-20231128_144244-w3zqno4g\files\wandb-summary.json
+2023-11-28 14:44:29,136 DEBUG   HandlerThread:12772 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-28 14:44:29,142 DEBUG   SenderThread:12772 [sender.py:send():380] send: history
+2023-11-28 14:44:29,143 DEBUG   SenderThread:12772 [sender.py:send_request():407] send_request: summary_record
+2023-11-28 14:44:29,146 INFO    SenderThread:12772 [sender.py:_save_file():1380] saving file wandb-summary.json with policy end
+2023-11-28 14:44:29,893 INFO    Thread-16 :12772 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\isaac\Documents\CodingProjects\statsprojector\src\wandb\run-20231128_144244-w3zqno4g\files\wandb-summary.json
+2023-11-28 14:44:30,158 DEBUG   HandlerThread:12772 [handler.py:handle_request():146] handle_request: status_report
+2023-11-28 14:44:30,318 DEBUG   HandlerThread:12772 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-28 14:44:30,324 DEBUG   SenderThread:12772 [sender.py:send():380] send: history
+2023-11-28 14:44:30,326 DEBUG   SenderThread:12772 [sender.py:send_request():407] send_request: summary_record
+2023-11-28 14:44:30,329 INFO    SenderThread:12772 [sender.py:_save_file():1380] saving file wandb-summary.json with policy end
+2023-11-28 14:44:30,348 DEBUG   HandlerThread:12772 [handler.py:handle_request():146] handle_request: stop_status
+2023-11-28 14:44:30,349 DEBUG   SenderThread:12772 [sender.py:send_request():407] send_request: stop_status
+2023-11-28 14:44:30,379 DEBUG   HandlerThread:12772 [handler.py:handle_request():146] handle_request: internal_messages
+2023-11-28 14:44:30,908 INFO    Thread-16 :12772 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\isaac\Documents\CodingProjects\statsprojector\src\wandb\run-20231128_144244-w3zqno4g\files\wandb-summary.json
+2023-11-28 14:44:31,473 DEBUG   HandlerThread:12772 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-28 14:44:31,479 DEBUG   SenderThread:12772 [sender.py:send():380] send: history
+2023-11-28 14:44:31,481 DEBUG   SenderThread:12772 [sender.py:send_request():407] send_request: summary_record
+2023-11-28 14:44:31,484 INFO    SenderThread:12772 [sender.py:_save_file():1380] saving file wandb-summary.json with policy end
+2023-11-28 14:44:31,916 INFO    Thread-16 :12772 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\isaac\Documents\CodingProjects\statsprojector\src\wandb\run-20231128_144244-w3zqno4g\files\wandb-summary.json
+2023-11-28 14:44:32,821 DEBUG   HandlerThread:12772 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-28 14:44:32,828 DEBUG   SenderThread:12772 [sender.py:send():380] send: history
+2023-11-28 14:44:32,829 DEBUG   SenderThread:12772 [sender.py:send_request():407] send_request: summary_record
+2023-11-28 14:44:32,832 INFO    SenderThread:12772 [sender.py:_save_file():1380] saving file wandb-summary.json with policy end
+2023-11-28 14:44:32,920 INFO    Thread-16 :12772 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\isaac\Documents\CodingProjects\statsprojector\src\wandb\run-20231128_144244-w3zqno4g\files\wandb-summary.json
+2023-11-28 14:44:34,004 DEBUG   HandlerThread:12772 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-28 14:44:34,010 DEBUG   SenderThread:12772 [sender.py:send():380] send: history
+2023-11-28 14:44:34,011 DEBUG   SenderThread:12772 [sender.py:send_request():407] send_request: summary_record
+2023-11-28 14:44:34,014 INFO    SenderThread:12772 [sender.py:_save_file():1380] saving file wandb-summary.json with policy end
+2023-11-28 14:44:34,939 INFO    Thread-16 :12772 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\isaac\Documents\CodingProjects\statsprojector\src\wandb\run-20231128_144244-w3zqno4g\files\wandb-summary.json
+2023-11-28 14:44:35,185 DEBUG   HandlerThread:12772 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-28 14:44:35,190 DEBUG   SenderThread:12772 [sender.py:send():380] send: history
+2023-11-28 14:44:35,192 DEBUG   SenderThread:12772 [sender.py:send_request():407] send_request: summary_record
+2023-11-28 14:44:35,193 DEBUG   HandlerThread:12772 [handler.py:handle_request():146] handle_request: status_report
+2023-11-28 14:44:35,195 INFO    SenderThread:12772 [sender.py:_save_file():1380] saving file wandb-summary.json with policy end
+2023-11-28 14:44:35,949 INFO    Thread-16 :12772 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\isaac\Documents\CodingProjects\statsprojector\src\wandb\run-20231128_144244-w3zqno4g\files\wandb-summary.json
+2023-11-28 14:44:36,305 DEBUG   HandlerThread:12772 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-28 14:44:36,307 DEBUG   SenderThread:12772 [sender.py:send():380] send: history
+2023-11-28 14:44:36,308 DEBUG   SenderThread:12772 [sender.py:send_request():407] send_request: summary_record
+2023-11-28 14:44:36,311 INFO    SenderThread:12772 [sender.py:_save_file():1380] saving file wandb-summary.json with policy end
+2023-11-28 14:44:36,952 INFO    Thread-16 :12772 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\isaac\Documents\CodingProjects\statsprojector\src\wandb\run-20231128_144244-w3zqno4g\files\wandb-summary.json
+2023-11-28 14:44:37,456 DEBUG   HandlerThread:12772 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-28 14:44:37,462 DEBUG   SenderThread:12772 [sender.py:send():380] send: history
+2023-11-28 14:44:37,464 DEBUG   SenderThread:12772 [sender.py:send_request():407] send_request: summary_record
+2023-11-28 14:44:37,467 INFO    SenderThread:12772 [sender.py:_save_file():1380] saving file wandb-summary.json with policy end
+2023-11-28 14:44:37,954 INFO    Thread-16 :12772 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\isaac\Documents\CodingProjects\statsprojector\src\wandb\run-20231128_144244-w3zqno4g\files\wandb-summary.json
+2023-11-28 14:44:38,649 DEBUG   HandlerThread:12772 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-28 14:44:38,651 DEBUG   SenderThread:12772 [sender.py:send():380] send: history
+2023-11-28 14:44:38,653 DEBUG   SenderThread:12772 [sender.py:send_request():407] send_request: summary_record
+2023-11-28 14:44:38,658 INFO    SenderThread:12772 [sender.py:_save_file():1380] saving file wandb-summary.json with policy end
+2023-11-28 14:44:38,965 INFO    Thread-16 :12772 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\isaac\Documents\CodingProjects\statsprojector\src\wandb\run-20231128_144244-w3zqno4g\files\output.log
+2023-11-28 14:44:38,966 INFO    Thread-16 :12772 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\isaac\Documents\CodingProjects\statsprojector\src\wandb\run-20231128_144244-w3zqno4g\files\wandb-summary.json
+2023-11-28 14:44:39,787 DEBUG   HandlerThread:12772 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-28 14:44:39,792 DEBUG   SenderThread:12772 [sender.py:send():380] send: history
+2023-11-28 14:44:39,794 DEBUG   SenderThread:12772 [sender.py:send_request():407] send_request: summary_record
+2023-11-28 14:44:39,797 INFO    SenderThread:12772 [sender.py:_save_file():1380] saving file wandb-summary.json with policy end
+2023-11-28 14:44:39,978 INFO    Thread-16 :12772 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\isaac\Documents\CodingProjects\statsprojector\src\wandb\run-20231128_144244-w3zqno4g\files\wandb-summary.json
+2023-11-28 14:44:40,803 DEBUG   HandlerThread:12772 [handler.py:handle_request():146] handle_request: status_report
+2023-11-28 14:44:40,913 DEBUG   HandlerThread:12772 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-28 14:44:40,918 DEBUG   SenderThread:12772 [sender.py:send():380] send: history
+2023-11-28 14:44:40,919 DEBUG   SenderThread:12772 [sender.py:send_request():407] send_request: summary_record
+2023-11-28 14:44:40,922 INFO    SenderThread:12772 [sender.py:_save_file():1380] saving file wandb-summary.json with policy end
+2023-11-28 14:44:40,992 INFO    Thread-16 :12772 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\isaac\Documents\CodingProjects\statsprojector\src\wandb\run-20231128_144244-w3zqno4g\files\wandb-summary.json
+2023-11-28 14:44:42,070 DEBUG   HandlerThread:12772 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-28 14:44:42,074 DEBUG   SenderThread:12772 [sender.py:send():380] send: history
+2023-11-28 14:44:42,074 DEBUG   SenderThread:12772 [sender.py:send_request():407] send_request: summary_record
+2023-11-28 14:44:42,078 INFO    SenderThread:12772 [sender.py:_save_file():1380] saving file wandb-summary.json with policy end
+2023-11-28 14:44:43,011 INFO    Thread-16 :12772 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\isaac\Documents\CodingProjects\statsprojector\src\wandb\run-20231128_144244-w3zqno4g\files\wandb-summary.json
+2023-11-28 14:44:43,233 DEBUG   HandlerThread:12772 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-28 14:44:43,238 DEBUG   SenderThread:12772 [sender.py:send():380] send: history
+2023-11-28 14:44:43,239 DEBUG   SenderThread:12772 [sender.py:send_request():407] send_request: summary_record
+2023-11-28 14:44:43,242 INFO    SenderThread:12772 [sender.py:_save_file():1380] saving file wandb-summary.json with policy end
+2023-11-28 14:44:44,016 INFO    Thread-16 :12772 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\isaac\Documents\CodingProjects\statsprojector\src\wandb\run-20231128_144244-w3zqno4g\files\wandb-summary.json
+2023-11-28 14:44:44,365 DEBUG   HandlerThread:12772 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-28 14:44:44,367 DEBUG   SenderThread:12772 [sender.py:send():380] send: history
+2023-11-28 14:44:44,368 DEBUG   SenderThread:12772 [sender.py:send_request():407] send_request: summary_record
+2023-11-28 14:44:44,373 INFO    SenderThread:12772 [sender.py:_save_file():1380] saving file wandb-summary.json with policy end
+2023-11-28 14:44:45,023 INFO    Thread-16 :12772 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\isaac\Documents\CodingProjects\statsprojector\src\wandb\run-20231128_144244-w3zqno4g\files\wandb-summary.json
+2023-11-28 14:44:45,183 DEBUG   SenderThread:12772 [sender.py:send():380] send: stats
+2023-11-28 14:44:45,354 DEBUG   HandlerThread:12772 [handler.py:handle_request():146] handle_request: stop_status
+2023-11-28 14:44:45,354 DEBUG   SenderThread:12772 [sender.py:send_request():407] send_request: stop_status
+2023-11-28 14:44:45,386 DEBUG   HandlerThread:12772 [handler.py:handle_request():146] handle_request: internal_messages
+2023-11-28 14:44:45,525 DEBUG   HandlerThread:12772 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-28 14:44:45,532 DEBUG   SenderThread:12772 [sender.py:send():380] send: history
+2023-11-28 14:44:45,533 DEBUG   SenderThread:12772 [sender.py:send_request():407] send_request: summary_record
+2023-11-28 14:44:45,536 INFO    SenderThread:12772 [sender.py:_save_file():1380] saving file wandb-summary.json with policy end
+2023-11-28 14:44:46,033 INFO    Thread-16 :12772 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\isaac\Documents\CodingProjects\statsprojector\src\wandb\run-20231128_144244-w3zqno4g\files\wandb-summary.json
+2023-11-28 14:44:46,550 DEBUG   HandlerThread:12772 [handler.py:handle_request():146] handle_request: status_report
+2023-11-28 14:44:46,695 DEBUG   HandlerThread:12772 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-28 14:44:46,701 DEBUG   SenderThread:12772 [sender.py:send():380] send: history
+2023-11-28 14:44:46,703 DEBUG   SenderThread:12772 [sender.py:send_request():407] send_request: summary_record
+2023-11-28 14:44:46,707 INFO    SenderThread:12772 [sender.py:_save_file():1380] saving file wandb-summary.json with policy end
+2023-11-28 14:44:47,047 INFO    Thread-16 :12772 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\isaac\Documents\CodingProjects\statsprojector\src\wandb\run-20231128_144244-w3zqno4g\files\wandb-summary.json
+2023-11-28 14:44:47,862 DEBUG   HandlerThread:12772 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-28 14:44:47,863 DEBUG   SenderThread:12772 [sender.py:send():380] send: history
+2023-11-28 14:44:47,863 DEBUG   SenderThread:12772 [sender.py:send_request():407] send_request: summary_record
+2023-11-28 14:44:47,864 INFO    SenderThread:12772 [sender.py:_save_file():1380] saving file wandb-summary.json with policy end
+2023-11-28 14:44:47,885 DEBUG   SenderThread:12772 [sender.py:send():380] send: telemetry
+2023-11-28 14:44:47,886 DEBUG   SenderThread:12772 [sender.py:send():380] send: exit
+2023-11-28 14:44:47,887 INFO    SenderThread:12772 [sender.py:send_exit():585] handling exit code: 0
+2023-11-28 14:44:47,887 INFO    SenderThread:12772 [sender.py:send_exit():587] handling runtime: 122
+2023-11-28 14:44:47,887 INFO    SenderThread:12772 [sender.py:_save_file():1380] saving file wandb-summary.json with policy end
+2023-11-28 14:44:47,888 INFO    SenderThread:12772 [sender.py:send_exit():593] send defer
+2023-11-28 14:44:47,888 DEBUG   HandlerThread:12772 [handler.py:handle_request():146] handle_request: defer
+2023-11-28 14:44:47,888 INFO    HandlerThread:12772 [handler.py:handle_request_defer():172] handle defer: 0
+2023-11-28 14:44:47,888 DEBUG   SenderThread:12772 [sender.py:send_request():407] send_request: defer
+2023-11-28 14:44:47,888 INFO    SenderThread:12772 [sender.py:send_request_defer():609] handle sender defer: 0
+2023-11-28 14:44:47,888 INFO    SenderThread:12772 [sender.py:transition_state():613] send defer: 1
+2023-11-28 14:44:47,888 DEBUG   HandlerThread:12772 [handler.py:handle_request():146] handle_request: defer
+2023-11-28 14:44:47,888 INFO    HandlerThread:12772 [handler.py:handle_request_defer():172] handle defer: 1
+2023-11-28 14:44:47,889 DEBUG   SenderThread:12772 [sender.py:send_request():407] send_request: defer
+2023-11-28 14:44:47,889 INFO    SenderThread:12772 [sender.py:send_request_defer():609] handle sender defer: 1
+2023-11-28 14:44:47,889 INFO    SenderThread:12772 [sender.py:transition_state():613] send defer: 2
+2023-11-28 14:44:47,889 DEBUG   HandlerThread:12772 [handler.py:handle_request():146] handle_request: defer
+2023-11-28 14:44:47,889 INFO    HandlerThread:12772 [handler.py:handle_request_defer():172] handle defer: 2
+2023-11-28 14:44:47,889 INFO    HandlerThread:12772 [system_monitor.py:finish():203] Stopping system monitor
+2023-11-28 14:44:47,889 DEBUG   SystemMonitor:12772 [system_monitor.py:_start():179] Finished system metrics aggregation loop
+2023-11-28 14:44:47,889 INFO    HandlerThread:12772 [interfaces.py:finish():202] Joined cpu monitor
+2023-11-28 14:44:47,898 DEBUG   SystemMonitor:12772 [system_monitor.py:_start():183] Publishing last batch of metrics
+2023-11-28 14:44:47,898 INFO    HandlerThread:12772 [interfaces.py:finish():202] Joined disk monitor
+2023-11-28 14:44:47,969 INFO    HandlerThread:12772 [interfaces.py:finish():202] Joined gpu monitor
+2023-11-28 14:44:47,969 INFO    HandlerThread:12772 [interfaces.py:finish():202] Joined memory monitor
+2023-11-28 14:44:47,970 INFO    HandlerThread:12772 [interfaces.py:finish():202] Joined network monitor
+2023-11-28 14:44:47,970 DEBUG   SenderThread:12772 [sender.py:send_request():407] send_request: defer
+2023-11-28 14:44:47,970 INFO    SenderThread:12772 [sender.py:send_request_defer():609] handle sender defer: 2
+2023-11-28 14:44:47,970 INFO    SenderThread:12772 [sender.py:transition_state():613] send defer: 3
+2023-11-28 14:44:47,970 DEBUG   SenderThread:12772 [sender.py:send():380] send: stats
+2023-11-28 14:44:47,970 DEBUG   HandlerThread:12772 [handler.py:handle_request():146] handle_request: defer
+2023-11-28 14:44:47,971 INFO    HandlerThread:12772 [handler.py:handle_request_defer():172] handle defer: 3
+2023-11-28 14:44:47,971 DEBUG   SenderThread:12772 [sender.py:send_request():407] send_request: defer
+2023-11-28 14:44:47,971 INFO    SenderThread:12772 [sender.py:send_request_defer():609] handle sender defer: 3
+2023-11-28 14:44:47,971 INFO    SenderThread:12772 [sender.py:transition_state():613] send defer: 4
+2023-11-28 14:44:47,971 DEBUG   HandlerThread:12772 [handler.py:handle_request():146] handle_request: defer
+2023-11-28 14:44:47,971 INFO    HandlerThread:12772 [handler.py:handle_request_defer():172] handle defer: 4
+2023-11-28 14:44:47,971 DEBUG   SenderThread:12772 [sender.py:send_request():407] send_request: defer
+2023-11-28 14:44:47,971 INFO    SenderThread:12772 [sender.py:send_request_defer():609] handle sender defer: 4
+2023-11-28 14:44:47,971 INFO    SenderThread:12772 [sender.py:transition_state():613] send defer: 5
+2023-11-28 14:44:47,972 DEBUG   HandlerThread:12772 [handler.py:handle_request():146] handle_request: defer
+2023-11-28 14:44:47,972 INFO    HandlerThread:12772 [handler.py:handle_request_defer():172] handle defer: 5
+2023-11-28 14:44:47,972 DEBUG   SenderThread:12772 [sender.py:send():380] send: summary
+2023-11-28 14:44:47,973 INFO    SenderThread:12772 [sender.py:_save_file():1380] saving file wandb-summary.json with policy end
+2023-11-28 14:44:47,973 DEBUG   SenderThread:12772 [sender.py:send_request():407] send_request: defer
+2023-11-28 14:44:47,973 INFO    SenderThread:12772 [sender.py:send_request_defer():609] handle sender defer: 5
+2023-11-28 14:44:47,973 INFO    SenderThread:12772 [sender.py:transition_state():613] send defer: 6
+2023-11-28 14:44:47,974 DEBUG   HandlerThread:12772 [handler.py:handle_request():146] handle_request: defer
+2023-11-28 14:44:47,974 INFO    HandlerThread:12772 [handler.py:handle_request_defer():172] handle defer: 6
+2023-11-28 14:44:47,974 DEBUG   SenderThread:12772 [sender.py:send_request():407] send_request: defer
+2023-11-28 14:44:47,974 INFO    SenderThread:12772 [sender.py:send_request_defer():609] handle sender defer: 6
+2023-11-28 14:44:47,978 DEBUG   HandlerThread:12772 [handler.py:handle_request():146] handle_request: status_report
+2023-11-28 14:44:48,057 INFO    Thread-16 :12772 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\isaac\Documents\CodingProjects\statsprojector\src\wandb\run-20231128_144244-w3zqno4g\files\wandb-summary.json
+2023-11-28 14:44:48,108 INFO    SenderThread:12772 [sender.py:transition_state():613] send defer: 7
+2023-11-28 14:44:48,108 DEBUG   HandlerThread:12772 [handler.py:handle_request():146] handle_request: defer
+2023-11-28 14:44:48,108 INFO    HandlerThread:12772 [handler.py:handle_request_defer():172] handle defer: 7
+2023-11-28 14:44:48,109 DEBUG   SenderThread:12772 [sender.py:send_request():407] send_request: defer
+2023-11-28 14:44:48,109 INFO    SenderThread:12772 [sender.py:send_request_defer():609] handle sender defer: 7
+2023-11-28 14:44:48,896 DEBUG   HandlerThread:12772 [handler.py:handle_request():146] handle_request: poll_exit
+2023-11-28 14:44:48,974 INFO    SenderThread:12772 [sender.py:transition_state():613] send defer: 8
+2023-11-28 14:44:48,974 DEBUG   SenderThread:12772 [sender.py:send_request():407] send_request: poll_exit
+2023-11-28 14:44:48,975 DEBUG   HandlerThread:12772 [handler.py:handle_request():146] handle_request: defer
+2023-11-28 14:44:48,975 INFO    HandlerThread:12772 [handler.py:handle_request_defer():172] handle defer: 8
+2023-11-28 14:44:48,975 DEBUG   SenderThread:12772 [sender.py:send_request():407] send_request: defer
+2023-11-28 14:44:48,975 INFO    SenderThread:12772 [sender.py:send_request_defer():609] handle sender defer: 8
+2023-11-28 14:44:48,975 INFO    SenderThread:12772 [job_builder.py:build():298] Attempting to build job artifact
+2023-11-28 14:44:48,976 INFO    SenderThread:12772 [job_builder.py:_get_source_type():428] is repo sourced job
+2023-11-28 14:44:49,042 INFO    SenderThread:12772 [job_builder.py:build():404] adding wandb-job metadata file
+2023-11-28 14:44:49,056 INFO    SenderThread:12772 [sender.py:transition_state():613] send defer: 9
+2023-11-28 14:44:49,056 DEBUG   HandlerThread:12772 [handler.py:handle_request():146] handle_request: defer
+2023-11-28 14:44:49,056 INFO    HandlerThread:12772 [handler.py:handle_request_defer():172] handle defer: 9
+2023-11-28 14:44:49,060 DEBUG   SenderThread:12772 [sender.py:send():380] send: artifact
+2023-11-28 14:44:49,068 INFO    Thread-16 :12772 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\isaac\Documents\CodingProjects\statsprojector\src\wandb\run-20231128_144244-w3zqno4g\files\output.log
+2023-11-28 14:44:49,069 INFO    Thread-16 :12772 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\isaac\Documents\CodingProjects\statsprojector\src\wandb\run-20231128_144244-w3zqno4g\files\config.yaml
+2023-11-28 14:44:49,610 INFO    SenderThread:12772 [sender.py:send_artifact():1458] sent artifact job-https___github.com_Rijikashi_statsprojector.git_src_main.py - {'id': 'QXJ0aWZhY3Q6NjUyMTA5NDEx', 'state': 'COMMITTED', 'artifactSequence': {'id': 'QXJ0aWZhY3RDb2xsZWN0aW9uOjExOTUwMzY2OA==', 'latestArtifact': {'id': 'QXJ0aWZhY3Q6NjUyMTA5NDEx', 'versionIndex': 2}}}
+2023-11-28 14:44:49,610 DEBUG   SenderThread:12772 [sender.py:send_request():407] send_request: defer
+2023-11-28 14:44:49,610 INFO    SenderThread:12772 [sender.py:send_request_defer():609] handle sender defer: 9
+2023-11-28 14:44:49,610 INFO    SenderThread:12772 [dir_watcher.py:finish():358] shutting down directory watcher
+2023-11-28 14:44:49,909 DEBUG   HandlerThread:12772 [handler.py:handle_request():146] handle_request: poll_exit
+2023-11-28 14:44:50,084 INFO    SenderThread:12772 [dir_watcher.py:finish():388] scan: C:\Users\isaac\Documents\CodingProjects\statsprojector\src\wandb\run-20231128_144244-w3zqno4g\files
+2023-11-28 14:44:50,084 INFO    SenderThread:12772 [dir_watcher.py:finish():402] scan save: C:\Users\isaac\Documents\CodingProjects\statsprojector\src\wandb\run-20231128_144244-w3zqno4g\files\config.yaml config.yaml
+2023-11-28 14:44:50,085 INFO    SenderThread:12772 [dir_watcher.py:finish():402] scan save: C:\Users\isaac\Documents\CodingProjects\statsprojector\src\wandb\run-20231128_144244-w3zqno4g\files\output.log output.log
+2023-11-28 14:44:50,087 INFO    SenderThread:12772 [dir_watcher.py:finish():402] scan save: C:\Users\isaac\Documents\CodingProjects\statsprojector\src\wandb\run-20231128_144244-w3zqno4g\files\requirements.txt requirements.txt
+2023-11-28 14:44:50,089 INFO    SenderThread:12772 [dir_watcher.py:finish():402] scan save: C:\Users\isaac\Documents\CodingProjects\statsprojector\src\wandb\run-20231128_144244-w3zqno4g\files\wandb-metadata.json wandb-metadata.json
+2023-11-28 14:44:50,090 INFO    SenderThread:12772 [dir_watcher.py:finish():402] scan save: C:\Users\isaac\Documents\CodingProjects\statsprojector\src\wandb\run-20231128_144244-w3zqno4g\files\wandb-summary.json wandb-summary.json
+2023-11-28 14:44:50,092 INFO    SenderThread:12772 [sender.py:transition_state():613] send defer: 10
+2023-11-28 14:44:50,092 DEBUG   SenderThread:12772 [sender.py:send_request():407] send_request: poll_exit
+2023-11-28 14:44:50,092 DEBUG   HandlerThread:12772 [handler.py:handle_request():146] handle_request: defer
+2023-11-28 14:44:50,094 INFO    HandlerThread:12772 [handler.py:handle_request_defer():172] handle defer: 10
+2023-11-28 14:44:50,095 DEBUG   SenderThread:12772 [sender.py:send_request():407] send_request: defer
+2023-11-28 14:44:50,095 INFO    SenderThread:12772 [sender.py:send_request_defer():609] handle sender defer: 10
+2023-11-28 14:44:50,095 INFO    SenderThread:12772 [file_pusher.py:finish():175] shutting down file pusher
+2023-11-28 14:44:50,416 INFO    wandb-upload_1:12772 [upload_job.py:push():131] Uploaded file C:\Users\isaac\Documents\CodingProjects\statsprojector\src\wandb\run-20231128_144244-w3zqno4g\files\output.log
+2023-11-28 14:44:50,536 INFO    wandb-upload_0:12772 [upload_job.py:push():131] Uploaded file C:\Users\isaac\Documents\CodingProjects\statsprojector\src\wandb\run-20231128_144244-w3zqno4g\files\config.yaml
+2023-11-28 14:44:50,604 INFO    wandb-upload_3:12772 [upload_job.py:push():131] Uploaded file C:\Users\isaac\Documents\CodingProjects\statsprojector\src\wandb\run-20231128_144244-w3zqno4g\files\wandb-summary.json
+2023-11-28 14:44:50,606 INFO    wandb-upload_2:12772 [upload_job.py:push():131] Uploaded file C:\Users\isaac\Documents\CodingProjects\statsprojector\src\wandb\run-20231128_144244-w3zqno4g\files\requirements.txt
+2023-11-28 14:44:50,816 INFO    Thread-15 (_thread_body):12772 [sender.py:transition_state():613] send defer: 11
+2023-11-28 14:44:50,816 DEBUG   HandlerThread:12772 [handler.py:handle_request():146] handle_request: defer
+2023-11-28 14:44:50,816 INFO    HandlerThread:12772 [handler.py:handle_request_defer():172] handle defer: 11
+2023-11-28 14:44:50,816 DEBUG   SenderThread:12772 [sender.py:send_request():407] send_request: defer
+2023-11-28 14:44:50,816 INFO    SenderThread:12772 [sender.py:send_request_defer():609] handle sender defer: 11
+2023-11-28 14:44:50,817 INFO    SenderThread:12772 [file_pusher.py:join():181] waiting for file pusher
+2023-11-28 14:44:50,817 INFO    SenderThread:12772 [sender.py:transition_state():613] send defer: 12
+2023-11-28 14:44:50,817 DEBUG   HandlerThread:12772 [handler.py:handle_request():146] handle_request: defer
+2023-11-28 14:44:50,817 INFO    HandlerThread:12772 [handler.py:handle_request_defer():172] handle defer: 12
+2023-11-28 14:44:50,817 DEBUG   SenderThread:12772 [sender.py:send_request():407] send_request: defer
+2023-11-28 14:44:50,817 INFO    SenderThread:12772 [sender.py:send_request_defer():609] handle sender defer: 12
+2023-11-28 14:44:50,817 INFO    SenderThread:12772 [file_stream.py:finish():595] file stream finish called
+2023-11-28 14:44:50,923 DEBUG   HandlerThread:12772 [handler.py:handle_request():146] handle_request: poll_exit
+2023-11-28 14:44:50,998 INFO    SenderThread:12772 [file_stream.py:finish():599] file stream finish is done
+2023-11-28 14:44:50,998 INFO    SenderThread:12772 [sender.py:transition_state():613] send defer: 13
+2023-11-28 14:44:50,999 DEBUG   SenderThread:12772 [sender.py:send_request():407] send_request: poll_exit
+2023-11-28 14:44:50,999 DEBUG   HandlerThread:12772 [handler.py:handle_request():146] handle_request: defer
+2023-11-28 14:44:50,999 INFO    HandlerThread:12772 [handler.py:handle_request_defer():172] handle defer: 13
+2023-11-28 14:44:50,999 DEBUG   SenderThread:12772 [sender.py:send_request():407] send_request: defer
+2023-11-28 14:44:50,999 INFO    SenderThread:12772 [sender.py:send_request_defer():609] handle sender defer: 13
+2023-11-28 14:44:50,999 INFO    SenderThread:12772 [sender.py:transition_state():613] send defer: 14
+2023-11-28 14:44:51,000 DEBUG   HandlerThread:12772 [handler.py:handle_request():146] handle_request: defer
+2023-11-28 14:44:51,000 DEBUG   SenderThread:12772 [sender.py:send():380] send: final
+2023-11-28 14:44:51,000 INFO    HandlerThread:12772 [handler.py:handle_request_defer():172] handle defer: 14
+2023-11-28 14:44:51,000 DEBUG   SenderThread:12772 [sender.py:send():380] send: footer
+2023-11-28 14:44:51,000 DEBUG   SenderThread:12772 [sender.py:send_request():407] send_request: defer
+2023-11-28 14:44:51,001 INFO    SenderThread:12772 [sender.py:send_request_defer():609] handle sender defer: 14
+2023-11-28 14:44:51,002 DEBUG   HandlerThread:12772 [handler.py:handle_request():146] handle_request: poll_exit
+2023-11-28 14:44:51,002 DEBUG   SenderThread:12772 [sender.py:send_request():407] send_request: poll_exit
+2023-11-28 14:44:51,004 DEBUG   HandlerThread:12772 [handler.py:handle_request():146] handle_request: internal_messages
+2023-11-28 14:44:51,004 DEBUG   HandlerThread:12772 [handler.py:handle_request():146] handle_request: server_info
+2023-11-28 14:44:51,004 DEBUG   HandlerThread:12772 [handler.py:handle_request():146] handle_request: get_summary
+2023-11-28 14:44:51,004 DEBUG   HandlerThread:12772 [handler.py:handle_request():146] handle_request: sampled_history
+2023-11-28 14:44:51,005 DEBUG   SenderThread:12772 [sender.py:send_request():407] send_request: server_info
+2023-11-28 14:44:51,006 DEBUG   HandlerThread:12772 [handler.py:handle_request():146] handle_request: job_info
+2023-11-28 14:44:51,085 DEBUG   SenderThread:12772 [sender.py:send_request():407] send_request: job_info
+2023-11-28 14:44:51,085 DEBUG   HandlerThread:12772 [handler.py:handle_request():146] handle_request: shutdown
+2023-11-28 14:44:51,085 INFO    HandlerThread:12772 [handler.py:finish():866] shutting down handler
+2023-11-28 14:44:52,011 INFO    WriterThread:12772 [datastore.py:close():294] close: C:\Users\isaac\Documents\CodingProjects\statsprojector\src\wandb\run-20231128_144244-w3zqno4g\run-w3zqno4g.wandb
+2023-11-28 14:44:52,090 INFO    SenderThread:12772 [sender.py:finish():1536] shutting down sender
+2023-11-28 14:44:52,090 INFO    SenderThread:12772 [file_pusher.py:finish():175] shutting down file pusher
+2023-11-28 14:44:52,090 INFO    SenderThread:12772 [file_pusher.py:join():181] waiting for file pusher

@@ -1,0 +1,39 @@
+2023-11-28 16:02:11,461 INFO    StreamThr :12940 [internal.py:wandb_internal():86] W&B internal server running at pid: 12940, started at: 2023-11-28 16:02:11.460438
+2023-11-28 16:02:11,463 DEBUG   HandlerThread:12940 [handler.py:handle_request():146] handle_request: status
+2023-11-28 16:02:11,469 INFO    WriterThread:12940 [datastore.py:open_for_write():85] open: C:\Users\isaac\Documents\CodingProjects\statsprojector\src\wandb\run-20231128_160211-gzg6mz98\run-gzg6mz98.wandb
+2023-11-28 16:02:11,470 DEBUG   SenderThread:12940 [sender.py:send():380] send: header
+2023-11-28 16:02:11,531 DEBUG   SenderThread:12940 [sender.py:send():380] send: run
+2023-11-28 16:02:11,855 INFO    SenderThread:12940 [dir_watcher.py:__init__():211] watching files in: C:\Users\isaac\Documents\CodingProjects\statsprojector\src\wandb\run-20231128_160211-gzg6mz98\files
+2023-11-28 16:02:11,855 INFO    SenderThread:12940 [sender.py:_start_run_threads():1124] run started: gzg6mz98 with start time 1701216131.464438
+2023-11-28 16:02:11,871 DEBUG   HandlerThread:12940 [handler.py:handle_request():146] handle_request: check_version
+2023-11-28 16:02:11,871 DEBUG   SenderThread:12940 [sender.py:send_request():407] send_request: check_version
+2023-11-28 16:02:11,991 DEBUG   HandlerThread:12940 [handler.py:handle_request():146] handle_request: run_start
+2023-11-28 16:02:12,018 DEBUG   HandlerThread:12940 [system_info.py:__init__():32] System info init
+2023-11-28 16:02:12,019 DEBUG   HandlerThread:12940 [system_info.py:__init__():47] System info init done
+2023-11-28 16:02:12,019 INFO    HandlerThread:12940 [system_monitor.py:start():194] Starting system monitor
+2023-11-28 16:02:12,019 INFO    SystemMonitor:12940 [system_monitor.py:_start():158] Starting system asset monitoring threads
+2023-11-28 16:02:12,019 INFO    HandlerThread:12940 [system_monitor.py:probe():214] Collecting system info
+2023-11-28 16:02:12,026 INFO    SystemMonitor:12940 [interfaces.py:start():190] Started cpu monitoring
+2023-11-28 16:02:12,027 INFO    SystemMonitor:12940 [interfaces.py:start():190] Started disk monitoring
+2023-11-28 16:02:12,028 INFO    SystemMonitor:12940 [interfaces.py:start():190] Started gpu monitoring
+2023-11-28 16:02:12,041 INFO    SystemMonitor:12940 [interfaces.py:start():190] Started memory monitoring
+2023-11-28 16:02:12,059 INFO    SystemMonitor:12940 [interfaces.py:start():190] Started network monitoring
+2023-11-28 16:02:12,059 DEBUG   HandlerThread:12940 [system_info.py:probe():196] Probing system
+2023-11-28 16:02:12,061 DEBUG   HandlerThread:12940 [system_info.py:_probe_git():181] Probing git
+2023-11-28 16:02:12,184 DEBUG   HandlerThread:12940 [system_info.py:_probe_git():189] Probing git done
+2023-11-28 16:02:12,184 DEBUG   HandlerThread:12940 [system_info.py:probe():244] Probing system done
+2023-11-28 16:02:12,184 DEBUG   HandlerThread:12940 [system_monitor.py:probe():223] {'os': 'Windows-10-10.0.19045-SP0', 'python': '3.10.7', 'heartbeatAt': '2023-11-29T00:02:12.059661', 'startedAt': '2023-11-29T00:02:11.449435', 'docker': None, 'cuda': None, 'args': ('1',), 'state': 'running', 'program': 'C:\\Users\\isaac\\Documents\\CodingProjects\\statsprojector\\src\\main.py', 'codePathLocal': 'main.py', 'codePath': 'src\\main.py', 'git': {'remote': 'https://github.com/Rijikashi/statsprojector.git', 'commit': '7251957d090a4b95dd8e4aac1196a2a71dece618'}, 'email': 'isaacjfu@gmail.com', 'root': 'C:/Users/isaac/Documents/CodingProjects/statsprojector', 'host': 'DESKTOP-EQT75GH', 'username': 'isaac', 'executable': 'C:\\Users\\isaac\\.virtualenvs\\statsprojector-OUdrkD65\\Scripts\\python.exe', 'cpu_count': 6, 'cpu_count_logical': 12, 'cpu_freq': {'current': 3400.0, 'min': 0.0, 'max': 3400.0}, 'cpu_freq_per_core': [{'current': 3400.0, 'min': 0.0, 'max': 3400.0}], 'disk': {'/': {'total': 464.6778984069824, 'used': 454.93978118896484}}, 'gpu': 'NVIDIA GeForce GTX 1660 Ti', 'gpu_count': 1, 'gpu_devices': [{'name': 'NVIDIA GeForce GTX 1660 Ti', 'memory_total': 6442450944}], 'memory': {'total': 15.931747436523438}}
+2023-11-28 16:02:12,184 INFO    HandlerThread:12940 [system_monitor.py:probe():224] Finished collecting system info
+2023-11-28 16:02:12,184 INFO    HandlerThread:12940 [system_monitor.py:probe():227] Publishing system info
+2023-11-28 16:02:12,184 DEBUG   HandlerThread:12940 [system_info.py:_save_pip():52] Saving list of pip packages installed into the current environment
+2023-11-28 16:02:12,185 DEBUG   HandlerThread:12940 [system_info.py:_save_pip():68] Saving pip packages done
+2023-11-28 16:02:12,186 INFO    HandlerThread:12940 [system_monitor.py:probe():229] Finished publishing system info
+2023-11-28 16:02:12,191 DEBUG   SenderThread:12940 [sender.py:send():380] send: files
+2023-11-28 16:02:12,192 INFO    SenderThread:12940 [sender.py:_save_file():1380] saving file wandb-metadata.json with policy now
+2023-11-28 16:02:12,204 DEBUG   HandlerThread:12940 [handler.py:handle_request():146] handle_request: stop_status
+2023-11-28 16:02:12,206 DEBUG   SenderThread:12940 [sender.py:send_request():407] send_request: stop_status
+2023-11-28 16:02:12,209 DEBUG   HandlerThread:12940 [handler.py:handle_request():146] handle_request: internal_messages
+2023-11-28 16:02:12,335 DEBUG   SenderThread:12940 [sender.py:send():380] send: telemetry
+2023-11-28 16:02:12,755 INFO    wandb-upload_0:12940 [upload_job.py:push():131] Uploaded file C:\Users\isaac\AppData\Local\Temp\tmp0lo9fydiwandb\l235h9o2-wandb-metadata.json
+2023-11-28 16:02:12,872 INFO    Thread-16 :12940 [dir_watcher.py:_on_file_created():271] file/dir created: C:\Users\isaac\Documents\CodingProjects\statsprojector\src\wandb\run-20231128_160211-gzg6mz98\files\requirements.txt
+2023-11-28 16:02:12,873 INFO    Thread-16 :12940 [dir_watcher.py:_on_file_created():271] file/dir created: C:\Users\isaac\Documents\CodingProjects\statsprojector\src\wandb\run-20231128_160211-gzg6mz98\files\wandb-metadata.json

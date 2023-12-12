@@ -1,0 +1,12 @@
+
+Epoch: 0 | MSE Train Loss: 1.0269668102264404 | MSE Test Loss: 15.249037742614746
+Traceback (most recent call last):
+  File "C:\Users\isaac\Documents\CodingProjects\statsprojector\src\main.py", line 283, in <module>
+    train()
+  File "C:\Users\isaac\Documents\CodingProjects\statsprojector\src\main.py", line 202, in train
+    train_helper(100, x_train, x_test, y_train, y_test, model, 0.01,"statsprojector.pth", x_mean, x_std )
+  File "C:\Users\isaac\Documents\CodingProjects\statsprojector\src\main.py", line 173, in train_helper
+    indicies = (torch.where(FILTER_FUNCS[func](x_test,x_std,x_mean), 1 , 0) != 0).any(dim=1).nonzero(as_tuple=True)[0]
+  File "C:\Users\isaac\Documents\CodingProjects\statsprojector\src\main.py", line 143, in <lambda>
+    'lossYoung' : lambda x,y,z : ((x[:,5:6] * y[:,5:6]) + z[:,5:6] <= 29 and (x[:,5:6] * y[:,5:6]) + z[:,5:6] > 22),
+RuntimeError: Boolean value of Tensor with more than one value is ambiguous

@@ -24,3 +24,10 @@ config: {'learning_rate': 0.01, 'epochs': 100}
 2023-11-28 16:02:12,206 INFO    MainThread:11336 [wandb_run.py:_redirect():2153] Wrapping output streams.
 2023-11-28 16:02:12,206 INFO    MainThread:11336 [wandb_run.py:_redirect():2178] Redirects installed.
 2023-11-28 16:02:12,209 INFO    MainThread:11336 [wandb_init.py:init():841] run started, returning control to user process
+2023-11-28 16:09:11,059 INFO    MainThread:11336 [wandb_run.py:_finish():1962] finishing run isaacjfu/statsprojector/gzg6mz98
+2023-11-28 16:09:11,059 INFO    MainThread:11336 [wandb_run.py:_atexit_cleanup():2202] got exitcode: 0
+2023-11-28 16:09:11,060 INFO    MainThread:11336 [wandb_run.py:_restore():2185] restore
+2023-11-28 16:09:11,060 INFO    MainThread:11336 [wandb_run.py:_restore():2191] restore done
+2023-11-28 16:09:16,459 INFO    MainThread:11336 [wandb_run.py:_footer_history_summary_info():3760] rendering history
+2023-11-28 16:09:16,460 INFO    MainThread:11336 [wandb_run.py:_footer_history_summary_info():3792] rendering summary
+2023-11-28 16:09:16,469 INFO    MainThread:11336 [wandb_run.py:_footer_sync_info():3719] logging synced files

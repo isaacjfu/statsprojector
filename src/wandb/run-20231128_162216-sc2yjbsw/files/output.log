@@ -1,0 +1,12 @@
+
+Epoch: 0 | MSE Train Loss: 1.01264226436615 | MSE Test Loss: 1.7873526811599731
+Epoch: 10 | MSE Train Loss: 0.5432425737380981 | MSE Test Loss: 0.5394737124443054
+Epoch: 20 | MSE Train Loss: 0.4619799256324768 | MSE Test Loss: 0.48379603028297424
+Traceback (most recent call last):
+  File "C:\Users\isaac\Documents\CodingProjects\statsprojector\src\main.py", line 280, in <module>
+    train()
+  File "C:\Users\isaac\Documents\CodingProjects\statsprojector\src\main.py", line 220, in train
+    train_helper(100, x_train, x_test, y_train, y_test, model, 0.01,"statsprojector.pth", x_mean, x_std )
+  File "C:\Users\isaac\Documents\CodingProjects\statsprojector\src\main.py", line 178, in train_helper
+    if (x_test[i][5]* x_std[0][5]) + x_mean[0][5] <= 22:
+KeyboardInterrupt

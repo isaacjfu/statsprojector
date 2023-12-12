@@ -29,6 +29,9 @@ class parseData:
         self.CONST_FEATURES = ["heightPG","heightSF","heightC","draftPos","season","age","gp","mp","pts","reb","ast","3p","fg%","ft%","stl","blk","tov"]
         self.CONST_OUTPUT = ["gp", "mp", "pts", "reb", "ast", "3p", "fg%", "ft%", "stl", "blk", "tov"]
 
+    def returnOutput(self):
+        return self.CONST_OUTPUT
+    
     def sample_data(self, name):
         f = open(self.dataFile)
         data = json.load(f)
@@ -107,13 +110,11 @@ class NeuralNetwork(nn.Module):
         super().__init__()
         self.flatten = nn.Flatten()
         self.linear_relu_stack = nn.Sequential(
-            nn.Linear(29,512),
+            nn.Linear(29,1024),
             nn.ReLU(),
-            nn.Linear(512,512),
+            nn.Linear(1024,1024),
             nn.ReLU(),
-            nn.Linear(512,512),
-            nn.ReLU(),
-            nn.Linear(512,11)
+            nn.Linear(1024,11)
         )
     def forward(self,x):
         x = self.flatten(x)
@@ -134,11 +135,22 @@ def normalize(x,y):
     return (x,x_mean,x_std,y,y_mean,y_std)
 
 def train_helper(epochs, x_train, x_test, y_train, y_test, model, lr, MODEL_NAME, x_mean, x_std):
+    FILTER_FUNCS = {
+        'lossPG': lambda x,y,z: x[:,0:1]  > 0,
+        'lossSF' : lambda x,y,z: x[:,1:2] > 0,
+        'lossC': lambda x,y,z: x[:,2:3]  > 0,
+        'lossRookie' : lambda x,y,z : (x[:,5:6] * y[:,5:6]) + z[:,5:6] <= 22,
+        'lossYoung' : lambda x,y,z : torch.logical_and((x[:,5:6] * y[:,5:6]) + z[:,5:6] <= 29,(x[:,5:6] * y[:,5:6]) + z[:,5:6] > 22),
+        'lossMid' : lambda x,y,z : torch.logical_and((x[:,5:6] * y[:,5:6]) + z[:,5:6] <= 35,(x[:,5:6] * y[:,5:6]) + z[:,5:6] > 29),
+        'lossOld' : lambda x,y,z : (x[:,5:6] * y[:,5:6]) + z[:,5:6] > 35,
+    }
     train_loss_values = []
     test_loss_values = []
     epoch_count = []
     loss_fn = nn.MSELoss()
     optimizer = torch.optim.Adam(params = model.parameters(), lr = lr)
+    stats = parseData()
+    catNames = stats.returnOutput()
 
     for epoch in range(epochs):
         model.train()
@@ -148,7 +160,6 @@ def train_helper(epochs, x_train, x_test, y_train, y_test, model, lr, MODEL_NAME
         loss.backward()
         optimizer.step()
         model.eval()
-        lossPG, lossSF, lossC, lossRookie, lossYoung, lossMid, lossOld = [0,0] , [0,0], [0,0], [0,0], [0,0], [0,0] ,[0,0]
         with torch.inference_mode():
             test_pred = model(x_test)
             test_loss = loss_fn(test_pred, y_test.type(torch.float))
@@ -158,35 +169,13 @@ def train_helper(epochs, x_train, x_test, y_train, y_test, model, lr, MODEL_NAME
                 test_loss_values.append(test_loss.detach().numpy())
                 print(f"Epoch: {epoch} | MSE Train Loss: {loss} | MSE Test Loss: {test_loss} ")
             
-            for i in range(len(x_test)):
-                loss = loss_fn(test_pred[i], y_test[i])
-                if (x_test[i][0]) > 0:
-                    lossPG[0] += loss
-                    lossPG[1] += 1
-                elif x_test[i][1] > 0:
-                    lossSF[0] += loss
-                    lossSF[1] += 1
-                elif x_test[i][2] >0 :
-                    lossC[0] += loss
-                    lossC[1] += 1
-                if (x_test[i][5]* x_std[0][5]) + x_mean[0][5] <= 22:
-                    lossRookie[0] += loss
-                    lossRookie[1] += 1
-                elif (x_test[i][5]* x_std[0][5]) + x_mean[0][5] <= 29 and (x_test[i][5]* x_std[0][5]) + x_mean[0][5] > 22:
-                    lossYoung[0] += loss
-                    lossYoung[1] += 1
-                elif (x_test[i][5]* x_std[0][5]) + x_mean[0][5] <= 35 and (x_test[i][5]* x_std[0][5]) + x_mean[0][5] > 29:
-                    lossMid[0] += loss
-                    lossMid[1] += 1
-                else:
-                    lossOld[0] += loss
-                    lossOld[1] += 1
-
-            wandb.log({"lossPG": lossPG[0]/lossPG[1], "lossSF": lossSF[0]/lossSF[1], "lossC":lossC[0]/lossC[1], "lossYoung": lossYoung[0]/lossYoung[1],
-                      "lossRookie":lossRookie[0]/lossRookie[1], "lossOld" : lossOld[0]/lossOld[1], "totalLoss" : test_loss, "lossMid" : lossMid[0]/lossMid[1] })
-                     
+            for func in FILTER_FUNCS:
+                indicies = (torch.where(FILTER_FUNCS[func](x_test,x_std,x_mean), 1 , 0) != 0).any(dim=1).nonzero(as_tuple=True)[0]
+                x_filter = x_test[indicies]
+                y_filter = y_test[indicies]
+                filter_loss = loss_fn(model(x_filter),y_filter)
+                wandb.log({func : filter_loss})
                 
-    
     MODEL_PATH = Path("models")  
     MODEL_PATH.mkdir(parents = True, exist_ok = True)
     MODEL_SAVE_PATH = MODEL_PATH/MODEL_NAME
@@ -210,7 +199,7 @@ def train():
     }
     
     model = NeuralNetwork()
-    train_helper(200, x_train, x_test, y_train, y_test, model, 0.01,"statsprojector.pth", x_mean, x_std )
+    train_helper(100, x_train, x_test, y_train, y_test, model, 0.01,"statsprojector.pth", x_mean, x_std )
 
     PATH = Path("metadata")
     torch.save(metadata, PATH/"meanstd.pt")
@@ -227,6 +216,8 @@ def singleUse(firstName, lastName):
     x_mean,x_std,y_mean,y_std = loaded_metadata["x_mean"], loaded_metadata["x_std"],loaded_metadata["y_mean"],loaded_metadata["y_std"]
     x_list, y_list = stats.sample_data(firstName + ' ' + lastName)
 
+    loss_fn = nn.MSELoss()
+    total = 0
     x = torch.Tensor(x_list)
     y = torch.Tensor(y_list)
     x = ( x - x_mean) / x_std
@@ -242,22 +233,41 @@ def singleUse(firstName, lastName):
         print(loaded_model_preds[i])
         print(y[i])
         print("\n")
-
-def testing():  
+        loss = loss_fn(loaded_model_preds[i],y[i])
+        print("loss on season " + {loss})
+    #     total += loss_fn(loaded_model_preds[i],y[i]).detach().numpy()
+    # print("Loss: " + total/len(y))
+def testing():
     torch.set_printoptions(sci_mode=False)
-    loaded_metadata = torch.load(f="metadata/meanstd.pt")
-    print(loaded_metadata["x_mean"])
-    # # simulate training
-    # epochs = 100
-    # offset = random.random() / 5
-    # for epoch in range(2, epochs):
-    #     acc = 1 - 2 ** -epoch - random.random() / epoch - offset
-    #     loss = 2 ** -epoch + random.random() / epoch + offset
-        
-    #     # log metrics to wandb
-    #     wandb.log({"acc": acc, "loss": loss})
-        
-    # # [optional] finish the wandb run, necessary in notebooks
+    stats = parseData()
+    x_list,y_list = stats.parse_data()
+
+    x = torch.Tensor(x_list)
+    y = torch.Tensor(y_list)
+    model = NeuralNetwork()
+    MODEL_PATH = Path("models")
+    MODEL_NAME = "statsprojector.pth"
+    model.load_state_dict(torch.load(f=MODEL_PATH/MODEL_NAME))
+    x_test = x[:10]
+    y_test = y[:10]
+    FILTER_FUNCS = {
+        'pg': lambda     x: x[:,0:1] > 0,
+        'sf' : lambda    x: x[:,1:2] > 0,
+        'center': lambda x: x[:,2:3] > 0,
+    }
+    loss_fn = nn.MSELoss()
+    for func in FILTER_FUNCS:
+        print(func + ":")
+        indicies = (torch.where(FILTER_FUNCS[func](x_test), 1 , 0) != 0).any(dim=1).nonzero(as_tuple=True)[0]
+        print(indicies)
+        x_filter = x_test[indicies]
+        print(x_filter)
+        y_filter = y_test[indicies]
+        print(y_filter)
+        y_pred = model(x_filter)
+        filter_loss = loss_fn(y_pred,y_filter)
+ 
+        print(filter_loss.detach().numpy())
 
 if len(sys.argv) <= 1:
     print("Please put a number between 1 and 2")

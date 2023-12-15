@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "C:\Users\isaac\Documents\CodingProjects\statsprojector\src\main.py", line 269, in <module>
+    train(sys.argv[2])
+  File "C:\Users\isaac\Documents\CodingProjects\statsprojector\src\main.py", line 191, in train
+    x_list,y_list = stats.parse_data()
+  File "C:\Users\isaac\Documents\CodingProjects\statsprojector\src\main.py", line 78, in parse_data
+    temp_x, temp_y = self.parse_player(data,player)
+  File "C:\Users\isaac\Documents\CodingProjects\statsprojector\src\main.py", line 62, in parse_player
+    for j in range(1,self.CONST_SEASONS+1):
+TypeError: can only concatenate str (not "int") to str

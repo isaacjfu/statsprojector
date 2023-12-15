@@ -1,0 +1,56 @@
+{
+    "os": "Windows-10-10.0.19045-SP0",
+    "python": "3.10.7",
+    "heartbeatAt": "2023-12-13T01:18:41.546235",
+    "startedAt": "2023-12-13T01:18:40.923333",
+    "docker": null,
+    "cuda": null,
+    "args": [
+        "1",
+        "4"
+    ],
+    "state": "running",
+    "program": "C:\\Users\\isaac\\Documents\\CodingProjects\\statsprojector\\src\\main.py",
+    "codePathLocal": "main.py",
+    "codePath": "src\\main.py",
+    "git": {
+        "remote": "https://github.com/Rijikashi/statsprojector.git",
+        "commit": "6eda08554623f58db84a7ef92243750e142c5459"
+    },
+    "email": "isaacjfu@gmail.com",
+    "root": "C:/Users/isaac/Documents/CodingProjects/statsprojector",
+    "host": "DESKTOP-EQT75GH",
+    "username": "isaac",
+    "executable": "C:\\Users\\isaac\\.virtualenvs\\statsprojector-OUdrkD65\\Scripts\\python.exe",
+    "cpu_count": 6,
+    "cpu_count_logical": 12,
+    "cpu_freq": {
+        "current": 3400.0,
+        "min": 0.0,
+        "max": 3400.0
+    },
+    "cpu_freq_per_core": [
+        {
+            "current": 3400.0,
+            "min": 0.0,
+            "max": 3400.0
+        }
+    ],
+    "disk": {
+        "/": {
+            "total": 464.6778984069824,
+            "used": 458.54558181762695
+        }
+    },
+    "gpu": "NVIDIA GeForce GTX 1660 Ti",
+    "gpu_count": 1,
+    "gpu_devices": [
+        {
+            "name": "NVIDIA GeForce GTX 1660 Ti",
+            "memory_total": 6442450944
+        }
+    ],
+    "memory": {
+        "total": 15.931747436523438
+    }
+}

@@ -1,0 +1,6 @@
+Traceback (most recent call last):
+  File "C:\Users\isaac\Documents\CodingProjects\statsprojector\src\main.py", line 295, in <module>
+    train_main((int)(sys.argv[2]))
+  File "C:\Users\isaac\Documents\CodingProjects\statsprojector\src\main.py", line 231, in train_main
+    print(season + " SMALL")
+TypeError: unsupported operand type(s) for +: 'int' and 'str'

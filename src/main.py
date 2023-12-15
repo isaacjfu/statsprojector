@@ -21,12 +21,13 @@ print(f"Using {device} device")
 
 
 class parseData:
-    def __init__(self):
+    def __init__(self,seasons= 0):
         self.dataFile = '../data/playerStats.json'
         # self.outputxFile = './inputFeatures.json'
         # self.outputyFile = './y_pred.json'
-        self.CONST_SEASONS = 2
-        self.CONST_FEATURES = ["heightPG","heightSF","heightC","draftPos","season","age","gp","mp","pts","reb","ast","3p","fg%","ft%","stl","blk","tov"]
+        self.CONST_SEASONS = seasons
+        self.CONST_STATIC_FEATURES = ["heightPG","heightSF","heightC","draftPos","season","age"]
+        self.CONST_FEATURES = ["gp","mp","pts","reb","ast","3p","fg%","ft%","stl","blk","tov"]
         self.CONST_OUTPUT = ["gp", "mp", "pts", "reb", "ast", "3p", "fg%", "ft%", "stl", "blk", "tov"]
 
     def returnOutput(self):
@@ -57,14 +58,12 @@ class parseData:
             temp_x.append((int)(drafted))
             split2 = stats_list[i]['season'].split('-')
             temp_x.append((int)(split2[0]))
-            if i-1 >= 0:
-                self.parse_data_helper(stats_list[i-1],temp_x,True)
-            else:
-                self.parse_data_helper(stats_list[i],temp_x,False)
-            if i-2 >= 0:
-                self.parse_data_helper(stats_list[i-2],temp_x,True)
-            else:
-                self.parse_data_helper(stats_list[i],temp_x,False)
+            temp_x.append((int)(stats_list[i]['age']))
+            for j in range(1,self.CONST_SEASONS+1):
+                if(i-j >= 0):
+                    self.parse_data_helper(stats_list[i-j],temp_x, True, True)
+                else:
+                    self.parse_data_helper(stats_list[i],temp_x, False, True)
             self.parse_data_helper(stats_list[i],temp_y,True,False)
             x.append(temp_x)
             y.append(temp_y)
@@ -93,24 +92,25 @@ class parseData:
             onehotarray[2] = 1
         return onehotarray
     
-    def parse_data_helper(self, data,x,is_Season, is_x = True):
+    def parse_data_helper(self, data, x, is_Season, is_x = True):
         if is_x:
             if is_Season:
-                for i in range(5, len(self.CONST_FEATURES)):
+                for i in range(0, len(self.CONST_FEATURES)):
                     x.append(data[self.CONST_FEATURES[i]])
             else:
-                for i in range(5,len(self.CONST_FEATURES)):
+                for i in range(0,len(self.CONST_FEATURES)):
                     x.append(0)
         else:
             for feature in self.CONST_OUTPUT:
                 x.append(data[feature])
 
-class NeuralNetwork(nn.Module):
-    def __init__(self):
+class NeuralNetworkSmall(nn.Module):
+    def __init__(self, seasons):
         super().__init__()
         self.flatten = nn.Flatten()
+        inputs = 6 + (11*seasons)
         self.linear_relu_stack = nn.Sequential(
-            nn.Linear(29,1024),
+            nn.Linear(inputs,1024),
             nn.ReLU(),
             nn.Linear(1024,1024),
             nn.ReLU(),
@@ -120,7 +120,26 @@ class NeuralNetwork(nn.Module):
         x = self.flatten(x)
         logits = self.linear_relu_stack(x)
         return logits
-
+    
+class NeuralNetworkBig(nn.Module):
+    def __init__(self, seasons):
+        super().__init__()
+        self.flatten = nn.Flatten()
+        inputs = 6 + (11*seasons)
+        self.linear_relu_stack = nn.Sequential(
+            nn.Linear(inputs,1024),
+            nn.ReLU(),
+            nn.Linear(1024,1024),
+            nn.ReLU(),
+            nn.Linear(1024,512),
+            nn.ReLU(),
+            nn.Linear(512,11)
+        )
+    def forward(self,x):
+        x = self.flatten(x)
+        logits = self.linear_relu_stack(x)
+        return logits
+    
 class statsDataset(Dataset):
     def __init__(self,json_file, transform =None):
         self.transform = transform
@@ -151,7 +170,6 @@ def train_helper(epochs, x_train, x_test, y_train, y_test, model, lr, MODEL_NAME
     optimizer = torch.optim.Adam(params = model.parameters(), lr = lr)
     stats = parseData()
     catNames = stats.returnOutput()
-
     for epoch in range(epochs):
         model.train()
         y_pred = model(x_train)
@@ -175,18 +193,21 @@ def train_helper(epochs, x_train, x_test, y_train, y_test, model, lr, MODEL_NAME
                 y_filter = y_test[indicies]
                 filter_loss = loss_fn(model(x_filter),y_filter)
                 wandb.log({func : filter_loss})
-                
+            for i in range(len(catNames)):
+                catLoss = loss_fn(test_pred[i:i+1], y_test[i:i+1])
+                wandb.log( {catNames[i]: catLoss/len(x_test)})
+            wandb.log({"totalLoss": test_loss})
+        
     MODEL_PATH = Path("models")  
     MODEL_PATH.mkdir(parents = True, exist_ok = True)
     MODEL_SAVE_PATH = MODEL_PATH/MODEL_NAME
     torch.save(obj = model.state_dict(), f= MODEL_SAVE_PATH)
 
 
-def train():
-    stats = parseData()
+def train(seasons,model,file,epochs, lr):
+    stats = parseData(seasons)
     x_list,y_list = stats.parse_data()
     x = torch.Tensor(x_list)
-    a = x
     y = torch.Tensor(y_list)
     x,x_mean,x_std,y,y_mean,y_std = normalize(x,y)
     partition = int(len(x) * 0.8)
@@ -197,77 +218,92 @@ def train():
         "y_mean" : y_mean,
         "y_std" : y_std
     }
-    
-    model = NeuralNetwork()
-    train_helper(100, x_train, x_test, y_train, y_test, model, 0.01,"statsprojector.pth", x_mean, x_std )
+
+    train_helper(epochs, x_train, x_test, y_train, y_test, model, lr ,file, x_mean, x_std)
+
 
     PATH = Path("metadata")
     torch.save(metadata, PATH/"meanstd.pt")
-    
 
-def singleUse(firstName, lastName):
+# 2 is generally best amount of season based off of hyperparameter tuning
+def train_main(seasons):
+    for i in range(0,5):
+        model_small = NeuralNetworkSmall(seasons) 
+        train(seasons,model_small,'statsprojector' + str(i) + '.pth', 300, 0.005)
+
+
+#hyperparameter tuning    
+# def train_main(seasons):
+#     for season in range(1,5):
+#         model_small = NeuralNetworkSmall(season) 
+#         print(str(season) + " SMALL")
+#         train(season,model_small,'statsprojector' + str(season) + '.pth',200)
+#         model_big = NeuralNetworkBig(season)
+#         print(str(season) + " BIG")
+#         train(season,model_big,'statsprojectorbig' + str(season) + '.pth',200)
+
+def singleUse(firstName, lastName, seasons):
     torch.set_printoptions(sci_mode=False)
-    loaded_model = NeuralNetwork()
-    MODEL_PATH = Path("models")
-    MODEL_NAME = "statsprojector.pth"
-    loaded_model.load_state_dict(torch.load(f=MODEL_PATH/MODEL_NAME))
-    stats = parseData()
+    stats = parseData(seasons)
     loaded_metadata = torch.load(f="metadata/meanstd.pt")
     x_mean,x_std,y_mean,y_std = loaded_metadata["x_mean"], loaded_metadata["x_std"],loaded_metadata["y_mean"],loaded_metadata["y_std"]
     x_list, y_list = stats.sample_data(firstName + ' ' + lastName)
-
-    loss_fn = nn.MSELoss()
-    total = 0
     x = torch.Tensor(x_list)
     y = torch.Tensor(y_list)
     x = ( x - x_mean) / x_std
-
-    loaded_model.eval()
-    with torch.inference_mode():
-        loaded_model_preds = loaded_model(x)
-        print('x:', x)
-        print('y:', loaded_model_preds)
-        loaded_model_preds = (loaded_model_preds * y_std) + y_mean
+    y_pred_aggregrate = torch.zeros_like(y)
+    y_pred_aggregrate_unnormalized = torch.zeros_like(y)
+    batches = 5
+    loss_fn = nn.MSELoss()
+    loss = 0
+    for i in range (0,batches):
+        loaded_model = NeuralNetworkSmall(seasons)
+        MODEL_PATH = Path("models")
+        MODEL_NAME = "statsprojector" + (str)(i) + ".pth"
+        loaded_model.load_state_dict(torch.load(f=MODEL_PATH/MODEL_NAME))
+        loaded_model.eval()
+        with torch.inference_mode():
+            loaded_model_preds = loaded_model(x)
+            y_pred_aggregrate_unnormalized = y_pred_aggregrate_unnormalized.add_(loaded_model_preds)
+            loaded_model_preds = (loaded_model_preds * y_std) + y_mean
+            y_pred_aggregrate = y_pred_aggregrate.add_(loaded_model_preds)
+    y_pred = y_pred_aggregrate/(batches)
+    y_pred_unnormalized = y_pred_aggregrate_unnormalized/(batches)
     for i in range(len(y)):
-        print("Season: " + str(i))
-        print(loaded_model_preds[i])
+        print("Season:" + str(i))
+        print(y_pred[i])
         print(y[i])
-        print("\n")
-        loss = loss_fn(loaded_model_preds[i],y[i])
-        print("loss on season " + {loss})
+    loss = loss_fn(y_pred,y)
+    print(loss)
+    # loaded_model.eval()
+    # with torch.inference_mode():
+    #     loaded_model_preds = loaded_model(x)
+    #     print('x:', x)
+    #     print('y:', loaded_model_preds)
+    #     loaded_model_preds = (loaded_model_preds * y_std) + y_mean
+    # for i in range(len(y)):
+    #     print("Season: " + str(i))
+    #     print(loaded_model_preds[i])
+    #     print(y[i])
+    #     print("\n")
+    #     loss = loss_fn(loaded_model_preds[i],y[i])
+    #     print("loss on season " + {loss})
     #     total += loss_fn(loaded_model_preds[i],y[i]).detach().numpy()
     # print("Loss: " + total/len(y))
 def testing():
     torch.set_printoptions(sci_mode=False)
-    stats = parseData()
+    stats = parseData(4)
     x_list,y_list = stats.parse_data()
-
+    count = 0
+    for x in x_list:
+        count+=1
+        print(x)
+        if count > 5:
+            break
     x = torch.Tensor(x_list)
     y = torch.Tensor(y_list)
-    model = NeuralNetwork()
-    MODEL_PATH = Path("models")
-    MODEL_NAME = "statsprojector.pth"
-    model.load_state_dict(torch.load(f=MODEL_PATH/MODEL_NAME))
-    x_test = x[:10]
-    y_test = y[:10]
-    FILTER_FUNCS = {
-        'pg': lambda     x: x[:,0:1] > 0,
-        'sf' : lambda    x: x[:,1:2] > 0,
-        'center': lambda x: x[:,2:3] > 0,
-    }
-    loss_fn = nn.MSELoss()
-    for func in FILTER_FUNCS:
-        print(func + ":")
-        indicies = (torch.where(FILTER_FUNCS[func](x_test), 1 , 0) != 0).any(dim=1).nonzero(as_tuple=True)[0]
-        print(indicies)
-        x_filter = x_test[indicies]
-        print(x_filter)
-        y_filter = y_test[indicies]
-        print(y_filter)
-        y_pred = model(x_filter)
-        filter_loss = loss_fn(y_pred,y_filter)
- 
-        print(filter_loss.detach().numpy())
+    print(x.shape)
+    print(x[:5])
 
 if len(sys.argv) <= 1:
     print("Please put a number between 1 and 2")
@@ -280,9 +316,9 @@ else:
             "epochs": 100,
             }
         )
-        train()
+        train_main((int)(sys.argv[2]))
     if sys.argv[1] == "2":
-        singleUse(sys.argv[2], sys.argv[3])
+        singleUse(sys.argv[2], sys.argv[3], (int)(sys.argv[4]))
     if sys.argv[1] == '3':
         testing()
 wandb.finish()

@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "C:\Users\isaac\Documents\CodingProjects\statsprojector\src\main.py", line 269, in <module>
+    train((int)(sys.argv[2]))
+  File "C:\Users\isaac\Documents\CodingProjects\statsprojector\src\main.py", line 205, in train
+    train_helper(100, x_train, x_test, y_train, y_test, model, 0.01,"statsprojector.pth", x_mean, x_std)
+  File "C:\Users\isaac\Documents\CodingProjects\statsprojector\src\main.py", line 152, in train_helper
+    stats = parseData()
+TypeError: parseData.__init__() missing 1 required positional argument: 'seasons'

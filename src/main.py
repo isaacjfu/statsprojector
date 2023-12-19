@@ -211,17 +211,19 @@ def train(seasons,model,file,epochs, lr):
     y = torch.Tensor(y_list)
     x,x_mean,x_std,y,y_mean,y_std = normalize(x,y)
     partition = int(len(x) * 0.8)
-    x_train, x_test, y_train, y_test = x[:partition], x[partition:], y[:partition], y[partition:]
+    indicies = torch.randperm(len(x_list))
+    train_split, test_split = indicies[partition:], indicies[:partition]
+    x_train, y_train = x[train_split], y[train_split]
+    x_test, y_test = x[test_split], y[test_split]
+
+    train_helper(epochs, x_train, x_test, y_train, y_test, model, lr ,file, x_mean, x_std)
+
     metadata = {
         "x_mean": x_mean,
         "x_std" : x_std,
         "y_mean" : y_mean,
         "y_std" : y_std
     }
-
-    train_helper(epochs, x_train, x_test, y_train, y_test, model, lr ,file, x_mean, x_std)
-
-
     PATH = Path("metadata")
     torch.save(metadata, PATH/"meanstd.pt")
 
@@ -252,7 +254,6 @@ def singleUse(firstName, lastName, seasons):
     y = torch.Tensor(y_list)
     x = ( x - x_mean) / x_std
     y_pred_aggregrate = torch.zeros_like(y)
-    y_pred_aggregrate_unnormalized = torch.zeros_like(y)
     batches = 5
     loss_fn = nn.MSELoss()
     loss = 0
@@ -264,46 +265,33 @@ def singleUse(firstName, lastName, seasons):
         loaded_model.eval()
         with torch.inference_mode():
             loaded_model_preds = loaded_model(x)
-            y_pred_aggregrate_unnormalized = y_pred_aggregrate_unnormalized.add_(loaded_model_preds)
             loaded_model_preds = (loaded_model_preds * y_std) + y_mean
             y_pred_aggregrate = y_pred_aggregrate.add_(loaded_model_preds)
     y_pred = y_pred_aggregrate/(batches)
-    y_pred_unnormalized = y_pred_aggregrate_unnormalized/(batches)
     for i in range(len(y)):
         print("Season:" + str(i))
         print(y_pred[i])
         print(y[i])
     loss = loss_fn(y_pred,y)
     print(loss)
-    # loaded_model.eval()
-    # with torch.inference_mode():
-    #     loaded_model_preds = loaded_model(x)
-    #     print('x:', x)
-    #     print('y:', loaded_model_preds)
-    #     loaded_model_preds = (loaded_model_preds * y_std) + y_mean
-    # for i in range(len(y)):
-    #     print("Season: " + str(i))
-    #     print(loaded_model_preds[i])
-    #     print(y[i])
-    #     print("\n")
-    #     loss = loss_fn(loaded_model_preds[i],y[i])
-    #     print("loss on season " + {loss})
-    #     total += loss_fn(loaded_model_preds[i],y[i]).detach().numpy()
-    # print("Loss: " + total/len(y))
+
 def testing():
     torch.set_printoptions(sci_mode=False)
-    stats = parseData(4)
+    stats = parseData(2)
     x_list,y_list = stats.parse_data()
-    count = 0
-    for x in x_list:
-        count+=1
-        print(x)
-        if count > 5:
-            break
+    indicies = torch.randperm(len(x_list))
+    partition = (int)(len(x_list)*0.8)
+    train_indicies, test_indicies = indicies[partition:], indicies[:partition]
     x = torch.Tensor(x_list)
     y = torch.Tensor(y_list)
-    print(x.shape)
-    print(x[:5])
+    x_shuffle = x[train_indicies]
+    y_shuffle = y[test_indicies]
+    print(train_indicies[:5])
+    print(test_indicies[:5])
+    # data_train = torch.utils.data.DataLoader(x, batch_size = 1, shuffle= True)
+    # for i in data_train:
+    #     print(i)
+    # print(data_train)
 
 if len(sys.argv) <= 1:
     print("Please put a number between 1 and 2")

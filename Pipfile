@@ -12,6 +12,7 @@ matplotlib = "*"
 ipympl = "*"
 torchaudio = "*"
 wandb = "*"
+flask = "*"
 
 [dev-packages]
 

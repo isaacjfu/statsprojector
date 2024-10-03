@@ -275,23 +275,33 @@ def singleUse(firstName, lastName, seasons):
     loss = loss_fn(y_pred,y)
     print(loss)
 
+def singleSeason(stats):
+    stats = torch.Tensor(stats)
+    loaded_metadata = torch.load(f="metadata/meanstd.pt",weights_only=True)
+    x_mean,x_std,y_mean,y_std = loaded_metadata["x_mean"], loaded_metadata["x_std"],loaded_metadata["y_mean"],loaded_metadata["y_std"]
+    x = ( stats - x_mean) / x_std
+    y_pred_aggregrate = torch.zeros_like(y_mean)
+    batches = 5
+    for i in range (0,batches):
+        loaded_model = NeuralNetworkSmall(2)
+        MODEL_PATH = Path("models")
+        MODEL_NAME = "statsprojector" + (str)(i) + ".pth"
+        loaded_model.load_state_dict(torch.load(f=MODEL_PATH/MODEL_NAME, weights_only=True))
+        loaded_model.eval()
+        with torch.inference_mode():
+            loaded_model_preds = loaded_model(x)
+            loaded_model_preds = (loaded_model_preds * y_std) + y_mean
+            y_pred_aggregrate = y_pred_aggregrate.add_(loaded_model_preds)
+    y_pred = y_pred_aggregrate/(batches)
+    return(y_pred)
+
 def testing():
     torch.set_printoptions(sci_mode=False)
     stats = parseData(2)
-    x_list,y_list = stats.parse_data()
-    indicies = torch.randperm(len(x_list))
-    partition = (int)(len(x_list)*0.8)
-    train_indicies, test_indicies = indicies[partition:], indicies[:partition]
-    x = torch.Tensor(x_list)
-    y = torch.Tensor(y_list)
-    x_shuffle = x[train_indicies]
-    y_shuffle = y[test_indicies]
-    print(train_indicies[:5])
-    print(test_indicies[:5])
-    # data_train = torch.utils.data.DataLoader(x, batch_size = 1, shuffle= True)
-    # for i in data_train:
-    #     print(i)
-    # print(data_train)
+    x_list, y_list = stats.sample_data('Stephen Curry')
+    test = x_list[-1]
+    print(test)
+    #print(singleSeason(test))
 
 if len(sys.argv) <= 1:
     print("Please put a number between 1 and 2")

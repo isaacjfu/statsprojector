@@ -1,0 +1,45 @@
+
+Epoch: 0 | MSE Train Loss: 1.0402847528457642 | MSE Test Loss: 0.7131015658378601
+Epoch: 10 | MSE Train Loss: 0.46219050884246826 | MSE Test Loss: 0.4552675783634186
+Epoch: 20 | MSE Train Loss: 0.43123841285705566 | MSE Test Loss: 0.4316871166229248
+Epoch: 30 | MSE Train Loss: 0.41188815236091614 | MSE Test Loss: 0.4231223165988922
+Epoch: 40 | MSE Train Loss: 0.39797183871269226 | MSE Test Loss: 0.41916677355766296
+Epoch: 50 | MSE Train Loss: 0.3854512870311737 | MSE Test Loss: 0.4180026948451996
+Epoch: 60 | MSE Train Loss: 0.3728383779525757 | MSE Test Loss: 0.4201832115650177
+Epoch: 70 | MSE Train Loss: 0.3740884065628052 | MSE Test Loss: 0.422993004322052
+Epoch: 80 | MSE Train Loss: 0.35489770770072937 | MSE Test Loss: 0.42480379343032837
+Epoch: 90 | MSE Train Loss: 0.34477880597114563 | MSE Test Loss: 0.42651405930519104
+Epoch: 100 | MSE Train Loss: 0.35832732915878296 | MSE Test Loss: 0.4701896905899048
+Epoch: 110 | MSE Train Loss: 0.3346036970615387 | MSE Test Loss: 0.4374464452266693
+Epoch: 120 | MSE Train Loss: 0.3174789547920227 | MSE Test Loss: 0.4371888339519501
+Epoch: 130 | MSE Train Loss: 0.318344384431839 | MSE Test Loss: 0.46312564611434937
+Epoch: 140 | MSE Train Loss: 0.3130635917186737 | MSE Test Loss: 0.45408928394317627
+Epoch: 150 | MSE Train Loss: 0.29168710112571716 | MSE Test Loss: 0.4592246413230896
+Epoch: 160 | MSE Train Loss: 0.2802237570285797 | MSE Test Loss: 0.4562559425830841
+Epoch: 170 | MSE Train Loss: 0.3017804026603699 | MSE Test Loss: 0.48243823647499084
+Epoch: 180 | MSE Train Loss: 0.28151705861091614 | MSE Test Loss: 0.46416839957237244
+Epoch: 190 | MSE Train Loss: 0.2681022584438324 | MSE Test Loss: 0.4656883478164673
+Traceback (most recent call last):
+  File "C:\Users\isaac\Documents\CodingProjects\statsprojector\src\main.py", line 307, in <module>
+    train_main((int)(sys.argv[2]))
+  File "C:\Users\isaac\Documents\CodingProjects\statsprojector\src\main.py", line 234, in train_main
+    train(seasons,model_small,'statsprojector' + str(i) + '.pth', 200, 0.005)
+  File "C:\Users\isaac\Documents\CodingProjects\statsprojector\src\main.py", line 219, in train
+    train_helper(epochs, x_train, x_test, y_train, y_test, model, lr ,file, x_mean, x_std)
+  File "C:\Users\isaac\Documents\CodingProjects\statsprojector\src\main.py", line 194, in train_helper
+    filter_loss = loss_fn(model(x_filter),y_filter)
+  File "C:\Users\isaac\.virtualenvs\statsprojector-OUdrkD65\lib\site-packages\torch\nn\modules\module.py", line 1518, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "C:\Users\isaac\.virtualenvs\statsprojector-OUdrkD65\lib\site-packages\torch\nn\modules\module.py", line 1527, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "C:\Users\isaac\Documents\CodingProjects\statsprojector\src\main.py", line 121, in forward
+    logits = self.linear_relu_stack(x)
+  File "C:\Users\isaac\.virtualenvs\statsprojector-OUdrkD65\lib\site-packages\torch\nn\modules\module.py", line 1518, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "C:\Users\isaac\.virtualenvs\statsprojector-OUdrkD65\lib\site-packages\torch\nn\modules\module.py", line 1527, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "C:\Users\isaac\.virtualenvs\statsprojector-OUdrkD65\lib\site-packages\torch\nn\modules\container.py", line 215, in forward
+    input = module(input)
+  File "C:\Users\isaac\.virtualenvs\statsprojector-OUdrkD65\lib\site-packages\torch\nn\modules\module.py", line 1515, in _wrapped_call_impl
+    if self._compiled_call_impl is not None:
+KeyboardInterrupt

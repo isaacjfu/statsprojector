@@ -1,6 +1,6 @@
 import {useState, useEffect} from 'react'
 
-const Searchbar = ( {players, setSelectedPlayer, setIsPlayerSelected} ) => {
+const Searchbar = ( {players, setSelectedPlayer} ) => {
     const [searchTerm, setSearchTerm] = useState('');
     const [filteredPlayers, setFilteredPlayers] = useState([]);
     useEffect ( () => {
@@ -22,7 +22,6 @@ const Searchbar = ( {players, setSelectedPlayer, setIsPlayerSelected} ) => {
         setSearchTerm(player.full_name)
         setSelectedPlayer(player.full_name)
         setFilteredPlayers([])
-        setIsPlayerSelected(true)
     }
     return (
         <div className="search-container">

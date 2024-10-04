@@ -8,7 +8,7 @@ from services import playerStatsHelper, getAll
 app = Flask(__name__)
 CORS(app)
 
-@app.route('/predict', methods = ['GET'])
+@app.route('/predict', methods = ['POST'])
 def get_season():
     data = request.get_json()
     sample = data.get('sample')
@@ -19,9 +19,11 @@ def get_season():
 def get_all_active():
     return jsonify(getAll())
 
-@app.route('/getPlayer', methods = ['GET'])
+@app.route('/getPlayer', methods = ['POST'])
 def get_player_stats():
-    return jsonify(playerStatsHelper("stephen curry"))
+    data = request.get_json()
+    name = data.get('name')
+    return jsonify(playerStatsHelper(name))
 
 @app.errorhandler(404)
 def page_not_found(e):

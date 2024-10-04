@@ -1,12 +1,12 @@
 import './App.css';
 import {useState,useEffect} from 'react';
 import Searchbar from './components/searchbar.js'
-
+import PlayerInfo from './components/playerinfo.js'
 const backendURL = 'http://127.0.0.1:5000/'
 function App() {
   const [players,setPlayers] = useState([])
   const [selectedPlayer, setSelectedPlayer] = useState("")
-  const [isPlayerSelected,setIsPlayerSelected] = useState(false)
+  const [playerData , setPlayerData] = useState([])
 
   useEffect ( () => {
     const playerFetch = async () => {
@@ -24,19 +24,36 @@ function App() {
       }
     }
     playerFetch()
-}, [])
-useEffect ( () => {
-  console.log("selected player is " + selectedPlayer)
-}, [selectedPlayer])
+  }, [])
+
+  useEffect ( () => {
+    const playerFetch = async() => {
+      try{
+        const json_data = JSON.stringify({"name" : selectedPlayer})
+        const res = await fetch(backendURL + 'getPlayer', {
+          method: "POST",
+          headers : {"Content-Type" : "application/json",
+            "Accept" : 'application/json'
+          },
+          body: json_data
+        })
+        const data = await res.json()
+        console.log(data)
+        setPlayerData(data)
+      } catch (error){
+        console.error(error)
+      }
+    }
+    if (selectedPlayer != ""){
+      playerFetch()
+    }
+  }, [selectedPlayer])
+
   return (
     <div className="App">
       <span>Choose a Player</span>
-      <Searchbar players = {players} setSelectedPlayer = {setSelectedPlayer} setIsPlayerSelected = {setIsPlayerSelected} />
-      {selectedPlayer && (
-        <div className = "selected-player">
-          <p>Selected Player: {selectedPlayer}</p>
-        </div>
-      )}
+      <Searchbar players = {players} setSelectedPlayer = {setSelectedPlayer} />
+      <PlayerInfo playerData = {playerData} />
     </div>
   );
 }

@@ -1,10 +1,12 @@
 from flask import Flask, jsonify, request
+from flask_cors import CORS
 from pathlib import Path
 import torch
 from main import singleSeason
+from services import playerStatsHelper, getAll
 
 app = Flask(__name__)
-
+CORS(app)
 
 @app.route('/predict', methods = ['GET'])
 def get_season():
@@ -12,3 +14,19 @@ def get_season():
     sample = data.get('sample')
     ret = singleSeason(sample).tolist()
     return jsonify(ret)
+
+@app.route('/', methods = ['GET'])
+def get_all_active():
+    return jsonify(getAll())
+
+@app.route('/getPlayer', methods = ['GET'])
+def get_player_stats():
+    return jsonify(playerStatsHelper("stephen curry"))
+
+@app.errorhandler(404)
+def page_not_found(e):
+    return jsonify(error="Endpoint not found"), 404
+
+@app.errorhandler(500)
+def internal_server_error(e):
+    return jsonify(error="Internal server error"), 500

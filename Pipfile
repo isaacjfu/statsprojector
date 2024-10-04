@@ -13,6 +13,7 @@ ipympl = "*"
 torchaudio = "*"
 wandb = "*"
 flask = "*"
+flask-cors = "*"
 
 [dev-packages]
 

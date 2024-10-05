@@ -3,6 +3,7 @@ import {useState,useEffect} from 'react';
 import Searchbar from './components/searchbar.js'
 import PlayerInfo from './components/playerinfo.js'
 const backendURL = 'http://127.0.0.1:5000/'
+
 function App() {
   const [players,setPlayers] = useState([])
   const [selectedPlayer, setSelectedPlayer] = useState("")
@@ -47,30 +48,30 @@ function App() {
     }
   }, [selectedPlayer])
 
-    const handleClick = () => {
-      const playerFetch = async (sample) => {
-          try{
-              const json_data = JSON.stringify({"sample" : sample})
-              const res = await fetch(backendURL + 'predict', {
-                method: "POST",
-                headers : {"Content-Type" : "application/json",
-                  "Accept" : 'application/json'
-                },
-                body: json_data
-              })
-              const data = await res.json()
-              setPlayerData((prevData) => ({
-                ...prevData,
-                stats: [...prevData.stats, data], // Add the new stat to the stats array
-              }));
-            } catch (error){
-              console.error(error)
-            }
-      }
-      let sample = createSample()
-      playerFetch(sample)
-
+  const handleClick = () => {
+    const playerFetch = async (sample) => {
+        try{
+            const json_data = JSON.stringify({"sample" : sample})
+            const res = await fetch(backendURL + 'predict', {
+              method: "POST",
+              headers : {"Content-Type" : "application/json",
+                "Accept" : 'application/json'
+              },
+              body: json_data
+            })
+            const data = await res.json()
+            setPlayerData((prevData) => ({
+              ...prevData,
+              stats: [...prevData.stats, data], // Add the new stat to the stats array
+            }));
+          } catch (error){
+            console.error(error)
+          }
+    }
+    let sample = createSample()
+    playerFetch(sample)
   }
+
   const createSample = () => {
       let age = playerData.stats[(playerData.stats.length)-1]['age'] + 1
       let year = Number(playerData.stats[(playerData.stats.length)-1]['season'].substring(0,4)) + 1
@@ -79,6 +80,7 @@ function App() {
       let sample = playerData.info.concat(year,age,season_one,season_two)
       return sample
   }
+
   const formatArray = (data) => {
       if (data.length == 0){
           return []

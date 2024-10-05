@@ -1,15 +1,6 @@
 import { useState,useEffect } from "react"
-const PlayerInfo = ( {playerData} ) => {
-    useEffect ( () => {
-        console.log("PLAYERDATA IN PLAYERINFO:" +playerData)
-        console.log(playerData['image_url'])
-        console.log(playerData['stats'])
-        //console.log(playerData['stats'][0]['fg%'])
-    }, [playerData])
 
-    const handleClick = () => {
-        
-    }
+const PlayerInfo = ( {playerData} ) => {
   return (
     <div>
         <img src = {playerData.image_url} />
@@ -18,8 +9,8 @@ const PlayerInfo = ( {playerData} ) => {
         ) : (<table>
             <thead>
                 <tr>
-                    <th>Season</th>
                     <th>Team</th>
+                    <th>Season</th>
                     <th>Age</th>
                     <th>GP</th>
                     <th>MP</th>
@@ -37,8 +28,8 @@ const PlayerInfo = ( {playerData} ) => {
             <tbody>
                 {playerData.stats.map((season) => {
                     return <tr>
-                        <td>{season['season']}</td>
                         <td>{season['team']}</td>
+                        <td>{season['season']}</td>
                         <td>{season['age']}</td>
                         <td>{season['gp']}</td>
                         <td>{season['mp']}</td>
@@ -56,9 +47,6 @@ const PlayerInfo = ( {playerData} ) => {
             </tbody>
         </table>) 
         }
-        <button onClick = {handleClick}> Project! </button>
-
-
     </div>
   )
 

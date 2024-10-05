@@ -12,8 +12,26 @@ CORS(app)
 def get_season():
     data = request.get_json()
     sample = data.get('sample')
-    ret = singleSeason(sample).tolist()
-    return jsonify(ret)
+    ret = singleSeason(sample).tolist()[0]
+    season_value = str((int)(sample[4]) + 1)[2:]
+    season_value = str(sample[4]) + '-' + season_value
+    filtered_proj_stats = {
+        "team": "---",
+        "age": sample[5],
+        "season": season_value,
+        "gp": round(ret[0],0),
+        "mp": round(ret[1],1),
+        "pts": round(ret[2],1),
+        "reb": round(ret[3],1),
+        "ast": round(ret[4],1),
+        "3p": round(ret[5],1),
+        "fg%": round(ret[6],3),
+        "ft%": round(ret[7],3),
+        "stl": round(ret[8],1),
+        "blk": round(ret[9],1),
+        "tov": round(ret[10],1),
+    }
+    return jsonify(filtered_proj_stats)
 
 @app.route('/', methods = ['GET'])
 def get_all_active():

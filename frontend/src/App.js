@@ -18,7 +18,6 @@ function App() {
         }
         const data = await res.json()
         setPlayers(data)
-        console.log("in main" + players)
       } catch (error) {
         console.error(error)
       }
@@ -38,7 +37,6 @@ function App() {
           body: json_data
         })
         const data = await res.json()
-        console.log(data)
         setPlayerData(data)
       } catch (error){
         console.error(error)
@@ -49,11 +47,54 @@ function App() {
     }
   }, [selectedPlayer])
 
+    const handleClick = () => {
+      const playerFetch = async (sample) => {
+          try{
+              const json_data = JSON.stringify({"sample" : sample})
+              const res = await fetch(backendURL + 'predict', {
+                method: "POST",
+                headers : {"Content-Type" : "application/json",
+                  "Accept" : 'application/json'
+                },
+                body: json_data
+              })
+              const data = await res.json()
+              setPlayerData((prevData) => ({
+                ...prevData,
+                stats: [...prevData.stats, data], // Add the new stat to the stats array
+              }));
+            } catch (error){
+              console.error(error)
+            }
+      }
+      let sample = createSample()
+      playerFetch(sample)
+
+  }
+  const createSample = () => {
+      let age = playerData.stats[(playerData.stats.length)-1]['age'] + 1
+      let year = Number(playerData.stats[(playerData.stats.length)-1]['season'].substring(0,4)) + 1
+      let season_one = formatArray(playerData.stats.length >= 1 ?playerData.stats[(playerData.stats.length)-1]: [])
+      let season_two = formatArray(playerData.stats.length >= 2 ? playerData.stats[(playerData.stats.length)-2] : [])
+      let sample = playerData.info.concat(year,age,season_one,season_two)
+      return sample
+  }
+  const formatArray = (data) => {
+      if (data.length == 0){
+          return []
+      }
+      let ret = [
+          data['gp'], data['mp'], data['pts'], data['reb'], data['ast'], data['3p'], data['fg%'], data['ft%'], data['stl'], data['blk'], data['tov']
+      ]
+      return ret
+  }
+
   return (
     <div className="App">
       <span>Choose a Player</span>
       <Searchbar players = {players} setSelectedPlayer = {setSelectedPlayer} />
       <PlayerInfo playerData = {playerData} />
+      <button onClick = {handleClick}> Project! </button>
     </div>
   );
 }

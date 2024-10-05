@@ -3,9 +3,6 @@ import {useState, useEffect} from 'react'
 const Searchbar = ( {players, setSelectedPlayer} ) => {
     const [searchTerm, setSearchTerm] = useState('');
     const [filteredPlayers, setFilteredPlayers] = useState([]);
-    useEffect ( () => {
-
-    }, [players])
     const handleSearchChange = (e) => {
         const value = e.target.value
         setSearchTerm(value)

@@ -92,11 +92,12 @@ function App() {
   }
 
   return (
-    <div className="App">
-      <span>Choose a Player</span>
+    <div className="home">
+      <span className = 'center header'>Choose a Player</span>
       <Searchbar players = {players} setSelectedPlayer = {setSelectedPlayer} />
       <PlayerInfo playerData = {playerData} />
-      <button onClick = {handleClick}> Project! </button>
+      {(!playerData || !playerData.stats) ? (<></>) :  (<button onClick = {handleClick}> Predict </button>)}
+      
     </div>
   );
 }

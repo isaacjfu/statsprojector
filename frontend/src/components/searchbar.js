@@ -21,22 +21,22 @@ const Searchbar = ( {players, setSelectedPlayer} ) => {
     setFilteredPlayers([])
   }
   return (
-    <div className="search-container">
+    <div className='search-container center'>
       <input
-        type="text"
+        type='text'
         value={searchTerm}
         onChange={handleSearchChange}
-        placeholder="Search players..."
-        className="search-input"
+        placeholder='Search players...'
+        className='search-input'
       />
       
       {filteredPlayers.length > 0 && (
-        <ul className="dropdown-list">
+        <ul className='dropdown-list'>
           {filteredPlayers.map((player) => (
             <li 
               key={player.id} 
               onClick={() => handleSelectPlayer(player)} 
-              className="dropdown-item"
+              className='dropdown-item'
             >
               {player.full_name}
             </li>

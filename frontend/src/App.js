@@ -38,6 +38,21 @@ function App() {
           body: json_data
         })
         const data = await res.json()
+        let stats_array = data['stats']
+        let i = 0;
+        while (i<stats_array.length){
+          if (i < stats_array.length-1){
+            if (stats_array[i]['age'] == stats_array[i+1]['age']){
+              stats_array.splice(i,1)
+            }
+            else{
+              i += 1
+            }
+          }
+          else{
+            i+=1
+          }
+        }
         setPlayerData(data)
       } catch (error){
         console.error(error)
@@ -75,15 +90,15 @@ function App() {
   const createSample = () => {
       let age = playerData.stats[(playerData.stats.length)-1]['age'] + 1
       let year = Number(playerData.stats[(playerData.stats.length)-1]['season'].substring(0,4)) + 1
-      let season_one = formatArray(playerData.stats.length >= 1 ?playerData.stats[(playerData.stats.length)-1]: [])
-      let season_two = formatArray(playerData.stats.length >= 2 ? playerData.stats[(playerData.stats.length)-2] : [])
+      let season_one = playerData.stats.length >= 1 ? formatArray(playerData.stats[(playerData.stats.length)-1]) : Array(11).fill(0)
+      let season_two = playerData.stats.length >= 2 ? formatArray(playerData.stats[(playerData.stats.length)-2]) : Array(11).fill(0)
       let sample = playerData.info.concat(year,age,season_one,season_two)
       return sample
   }
 
   const formatArray = (data) => {
       if (data.length == 0){
-          return []
+          return Array(11).fill(0)
       }
       let ret = [
           data['gp'], data['mp'], data['pts'], data['reb'], data['ast'], data['3p'], data['fg%'], data['ft%'], data['stl'], data['blk'], data['tov']
@@ -96,7 +111,7 @@ function App() {
       <span className = 'center header'>Choose a Player</span>
       <Searchbar players = {players} setSelectedPlayer = {setSelectedPlayer} />
       <PlayerInfo playerData = {playerData} />
-      {(!playerData || !playerData.stats) ? (<></>) :  (<button onClick = {handleClick}> Predict </button>)}
+      {(!playerData || !playerData.stats) ? (<></>) :  (<span className = "predict" onClick ={handleClick}> Predict </span>)}
       
     </div>
   );

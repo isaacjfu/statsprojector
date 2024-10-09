@@ -1,7 +1,11 @@
-.home{
+html, body {
+  height:100%;
   background-color: #e3e3e1;
+  overflow-y: auto;
+  box-sizing: border-box;
+}
+.home{
   width: 100vw;
-  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -83,4 +87,16 @@ tr:hover {
 
 .selected-player {
   margin-top: 10px;
+}
+
+.predict{
+  font-weight: 500;
+  padding:5px;
+  margin:2.5px;
+  transition: text-decoration 0.3s ease;
+}
+.predict:hover{
+  text-decoration: underline;
+  font-weight: bold;
+  cursor:pointer;
 }

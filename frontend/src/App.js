@@ -37,6 +37,7 @@ function App() {
           },
           body: json_data
         })
+        
         const data = await res.json()
         let stats_array = data['stats']
         let i = 0;

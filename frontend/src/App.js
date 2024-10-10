@@ -110,8 +110,8 @@ function App() {
     <div className="home">
       <span className = 'center header'>Choose a Player</span>
       <Searchbar players = {players} setSelectedPlayer = {setSelectedPlayer} />
-      <PlayerInfo playerData = {playerData} />
-      {(!playerData || !playerData.stats) ? (<></>) :  (<span className = "predict" onClick ={handleClick}> Predict </span>)}
+      <PlayerInfo playerData = {playerData} selectedPlayer = {selectedPlayer}/>
+      {(!playerData || !playerData.stats) ? (<></>) :  (<button className = "predict" onClick ={handleClick}> Predict next season </button>)}
       
     </div>
   );

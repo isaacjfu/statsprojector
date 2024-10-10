@@ -1,4 +1,4 @@
-const PlayerInfo = ( {playerData} ) => {
+const PlayerInfo = ( {playerData,selectedPlayer} ) => {
   return (
     <div>
         { (!playerData || !playerData.stats) ? (
@@ -6,6 +6,7 @@ const PlayerInfo = ( {playerData} ) => {
         ) : (
         <div>
             <img className = 'image' src = {playerData.image_url} />
+            <h2> {selectedPlayer}'s Career Stats </h2>
             <table className = 'table'>
                 <thead>
                     <tr>
@@ -27,7 +28,8 @@ const PlayerInfo = ( {playerData} ) => {
                 </thead>
                 <tbody>
                     {playerData.stats.map((season) => {
-                        return <tr>
+                        if (season['team'] == "---"){
+                            return <tr className = 'tr-predict'>
                             <td>{season['team']}</td>
                             <td>{season['season']}</td>
                             <td>{season['age']}</td>
@@ -42,7 +44,25 @@ const PlayerInfo = ( {playerData} ) => {
                             <td>{season['stl'].toFixed(1)}</td>
                             <td>{season['blk'].toFixed(1)}</td>
                             <td>{season['tov'].toFixed(1)}</td>
-                        </tr>              
+                        </tr>  
+                        } else{  
+                            return <tr>
+                                <td>{season['team']}</td>
+                                <td>{season['season']}</td>
+                                <td>{season['age']}</td>
+                                <td>{season['gp'].toFixed(0)}</td>
+                                <td>{season['mp'].toFixed(1)}</td>
+                                <td>{season['fg%'].toFixed(3).replace(/^0+/, '')}</td>
+                                <td>{season['ft%'].toFixed(3).replace(/^0+/, '')}</td>
+                                <td>{season['pts'].toFixed(1)}</td>
+                                <td>{season['3p'].toFixed(1)}</td>
+                                <td>{season['ast'].toFixed(1)}</td>
+                                <td>{season['reb'].toFixed(1)}</td>
+                                <td>{season['stl'].toFixed(1)}</td>
+                                <td>{season['blk'].toFixed(1)}</td>
+                                <td>{season['tov'].toFixed(1)}</td>
+                            </tr>   
+                            }           
                         })}
                 </tbody>
             </table>

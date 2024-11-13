@@ -1,18 +1,37 @@
-name: Deploy Flask to AWS Elastic Beanstalk
+name: Deploy React App to GitHub Pages
 
 on:
   push:
     branches:
-      - main  # Deploy when pushing to the main branch
+      - main  # or any branch you want to trigger deployment from
 
 jobs:
-  deploy:
-    runs-on: ubuntu-22.04
+  build:
+    runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v3
-      - name: Deploy
+      # Checkout the repository
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      # Set up Node.js
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16'  # specify the Node.js version
+
+      # Install dependencies
+      - name: Install dependencies
+        run: npm install
+
+      # Build the React app
+      - name: Build React app
+        run: npm run build
+
+      # Deploy to GitHub Pages
+      - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
-        if: github.ref == 'refs/heads/main'
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./frontend # deploy src folder
+          publish_dir: ./build  # directory containing the built app
+          publish_branch: gh-pages  # branch to deploy to

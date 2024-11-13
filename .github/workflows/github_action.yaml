@@ -22,16 +22,20 @@ jobs:
 
       # Install dependencies
       - name: Install dependencies
-        run: npm install
+        run: |
+          cd frontend
+          npm install
 
       # Build the React app
       - name: Build React app
-        run: npm run build
+        run: |
+          cd frontend
+          npm run build
 
       # Deploy to GitHub Pages
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./frontend  # directory containing the built app
+          publish_dir: ./frontend/build  # directory containing the built app
           publish_branch: gh-pages  # branch to deploy to

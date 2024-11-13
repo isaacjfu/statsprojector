@@ -33,5 +33,5 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./build  # directory containing the built app
+          publish_dir: ./frontend  # directory containing the built app
           publish_branch: gh-pages  # branch to deploy to

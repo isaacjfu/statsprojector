@@ -4,16 +4,6 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-requests = "*"
-torchvision = "*"
-nba-api = "*"
-pandas = "*"
-matplotlib = "*"
-ipympl = "*"
-torchaudio = "*"
-wandb = "*"
-flask = "*"
-flask-cors = "*"
 
 [dev-packages]
 

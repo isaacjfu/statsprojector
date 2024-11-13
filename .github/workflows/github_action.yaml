@@ -39,3 +39,4 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./frontend/build  # directory containing the built app
           publish_branch: gh-pages  # branch to deploy to
+

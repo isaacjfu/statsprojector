@@ -2,7 +2,7 @@ import './App.css';
 import {useState,useEffect} from 'react';
 import Searchbar from './components/searchbar.js'
 import PlayerInfo from './components/playerinfo.js'
-const backendURL = 'https://statsprojector.link'
+const backendURL = 'https://statsprojector.link/'
 
 function App() {
   const [players,setPlayers] = useState([])

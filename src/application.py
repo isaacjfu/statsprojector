@@ -39,6 +39,10 @@ def get_season():
 def get_all_active():
     return jsonify(getAll())
 
+@application.route('/test', methods = ['GET'])
+def get_test():
+    return "Test"
+
 @application.route('/getPlayer', methods = ['POST'])
 def get_player_stats():
     data = request.get_json()
@@ -51,7 +55,7 @@ def page_not_found(e):
 
 @application.errorhandler(500)
 def internal_server_error(e):
-    return jsonify(error="Internal server error"), 500
+    return jsonify(error= e), 500
 
 if __name__ == "__main__":
     application.run()

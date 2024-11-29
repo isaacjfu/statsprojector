@@ -35,10 +35,14 @@ function App() {
           headers : {"Content-Type" : "application/json",
             "Accept" : 'application/json'
           },
-          body: json_data
+          body: json_data,
+          mode: 'cors',
+          redirect: 'follow'
         })
-        
+        console.log('hello')
         const data = await res.json()
+        console.log('hello2')
+        console.log(data)
         let stats_array = data['stats']
         let i = 0;
         while (i<stats_array.length){
